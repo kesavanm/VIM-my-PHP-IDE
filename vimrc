@@ -1,3 +1,4 @@
+set nocp
 call pathogen#infect()
 let mapleader = "\<Space>"
 set nocompatible
@@ -377,3 +378,16 @@ endif
 if filereadable($HOME.'/.vimrc_local')
 	source $HOME/.vimrc_local
 endif
+
+
+" --- kmuthuvel's own tweaks -- 
+
+set directory=~/.vim/tmp
+set modifiable
+set shell=/bin/bash
+set tags=/data/kmuthuvel/code/tags
+set nolist
+nmap <F9> :TagbarToggle<CR>
+nmap ,f :FufFileWithCurrentBufferDir<CR>
+nmap ,b :FufBuffer<CR>
+nmap ,t :FufTaggedFile<CR>
