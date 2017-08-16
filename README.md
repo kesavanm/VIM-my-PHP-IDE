@@ -1,9 +1,9 @@
-# /home/tlhunter/.vim/vimrc
+# /home/kesavan/.vim/vimrc
 
 ![Screenshot](./screenshot.png "Screenshot of this .vimrc in action")
 
 This Vim configuration is meant to make Vim feel more like an IDE than a simple console-based text editor.
-I use it mostly under with MacVIM and Linux GVim though I occasionally run it directly in a terminal.
+I love this configuration at my work & home
 
 ## Installation
 
@@ -15,7 +15,6 @@ You can run `git pull` inside of `~/.vim` if you'd ever like to grab the latest 
 ```bash
 cd ~
 git clone git://github.com/kesavanm/VIM-my-PHP-IDE.git .vim
-
 ln -s ~/.vim/vimrc ~/.vimrc # Optional, needed for some VIM installations
 ```
 
@@ -44,8 +43,8 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 
 * Use `<Leader>q` to close the current file (a different file will appear in its place)
 * Use `Ctrl h` `Ctrl l` to move between open files
- * `Ctrl Left` `Ctrl Right` also works for switching between files
- * While in MacVIM, you can swipe left and right to switch between open files
+* `Ctrl Left` `Ctrl Right` also works for switching between files
+* While in MacVIM, you can swipe left and right to switch between open files
 * Use `Cmd Shift N` (or `Alt n` in Linux GVim) to open a new empty buffer
 
 ### Viewports (Windows/Splits)
@@ -84,8 +83,6 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * Use `return` to open a directory or file.
 * Use `j and k or the cursor keys` to move up and down in the list.
 
-
-
 ### Tabs
 
 * Use `Cmd t` (or `Alt t` in Linux GVim) to open a new tab
@@ -110,20 +107,24 @@ Set the scheme using `:colorscheme NAME`.
 
 ### C-Tags
 
-##Install CTAG
+* Install CTAG
+```bash
+$ wget https://downloads.sourceforge.net/project/ctags/ctags/5.8/ctags-5.8.tar.gz
+$ tar zxf ctags-5.8.tar.gz
+$ cd ctags-5.8
+$ ./configure --prefix=$HOME
+$ make && make install
+```
 
-# wget https://downloads.sourceforge.net/project/ctags/ctags/5.8/ctags-5.8.tar.gz
-# tar zxf ctags-5.8.tar.gz
-# cd ctags-5.8
-# ./configure --prefix=$HOME
-# make && make install
+* Generate the tags file to hold all your project info
+```bash
+$ctags -R --languages=php .	(you can ignore languages option as well )
+ ```
 
-* ctags -R --languages=php .	(you can ignore languages option as well )
-*
 *  g C-] 		is very useful. It opens a quick dialog to select one between multiple definitions. 
 *  ctrl-t   - goes to previous spot where you called :tag
 *  ctrl-]   - calls :tag on the word under the cursor
-  
+ 
 *  :tag /<pattern>
 *  :stag /<pattern>
 *  :ptag /<pattern>
