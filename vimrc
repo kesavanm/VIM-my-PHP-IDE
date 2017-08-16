@@ -396,3 +396,23 @@ nmap ,t :FufTaggedFile<CR>
 
 let g:ctrlp_working_path_mode = 'ra'	" 0 to search only on current dir
 
+" http://vimhelp.appspot.com/digraph.txt.html
+" Ctrl-K Dt for ▼ 	(also use :digraph )
+
+let g:NERDTreeDirArrowExpandable = '»'
+let g:NERDTreeDirArrowCollapsible = '▼'
+"let g:NERDTreeDirArrowCollapsible = '-'
+
+set enc=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf8,prc
+set guifont=Monaco:h14
+set guifontwide=NSimsun:h14
+
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8                     " better default than latin1
+  setglobal fileencoding=utf-8           " change default file encoding when writing new files
+endif
