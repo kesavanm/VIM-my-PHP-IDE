@@ -57,6 +57,9 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * Use `<Leader>a` and type a phrase to search to search based on content within your files (quote and escape if needed)
 * Use `<Leader>A` to close the open ack search results at the bottom of the screen
 
+* Use `Ctrl ww` to switch between windows
+
+
 ### File Browser (NERDTree)
 
 * Use `<Leader>n` to toggle the file browser
@@ -107,6 +110,16 @@ Set the scheme using `:colorscheme NAME`.
 
 ### C-Tags
 
+##Install CTAG
+
+# wget https://downloads.sourceforge.net/project/ctags/ctags/5.8/ctags-5.8.tar.gz
+# tar zxf ctags-5.8.tar.gz
+# cd ctags-5.8
+# ./configure --prefix=$HOME
+# make && make install
+
+* ctags -R --languages=php .	(you can ignore languages option as well )
+*
 *  g C-] 		is very useful. It opens a quick dialog to select one between multiple definitions. 
 *  ctrl-t   - goes to previous spot where you called :tag
 *  ctrl-]   - calls :tag on the word under the cursor
@@ -123,8 +136,10 @@ Set the scheme using `:colorscheme NAME`.
 *  :ptag    - open tag in preview window (also ctrl-w })
 *  :pclose  - close preview window
 
-
-
+### Quick Fix
+:copen  - Opens quick fix window
+:cclose	- Closes the quick fix window
+:Run <command> 	- Run the command and send the output to Quick fix window
 
 ### Text Navigation
 
@@ -140,6 +155,10 @@ Other than the myriad of built-in methods for navigating text...
 
 ### General
 
+* :se  - shortcut for :set
+* :set mouse=a  - set vim in mouse mode ; No right click , quick paste
+* :set mouse=	- set vim in quick edit mode
+
 * gg Goto line #1
 * G  Goto EOF
 * N| Goto column N
@@ -151,4 +170,9 @@ Other than the myriad of built-in methods for navigating text...
 * Ctrl u – Jump back (up) one half screen
 
 
+### Closing Windows/Tabs/VI
+
+* :Bclose :Bc - Buffer close
+* :tabclose	- Tab close
+* :qa :qall 	- Quit all
 
