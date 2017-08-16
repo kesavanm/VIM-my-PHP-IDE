@@ -379,9 +379,8 @@ if filereadable($HOME.'/.vimrc_local')
 	source $HOME/.vimrc_local
 endif
 
-
 " --- kmuthuvel's own tweaks -- 
-
+set ignorecase
 set directory=~/.vim/tmp
 set modifiable
 set shell=/bin/bash
@@ -391,3 +390,9 @@ nmap <F9> :TagbarToggle<CR>
 nmap ,f :FufFileWithCurrentBufferDir<CR>
 nmap ,b :FufBuffer<CR>
 nmap ,t :FufTaggedFile<CR>
+
+"CtrlP
+" ctrlp_working_path_mode - searching for file name (project/curr_dir)
+
+let g:ctrlp_working_path_mode = 'ra'	" 0 to search only on current dir
+
