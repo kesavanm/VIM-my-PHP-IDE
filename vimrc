@@ -391,10 +391,28 @@ nmap ,f :FufFileWithCurrentBufferDir<CR>
 nmap ,b :FufBuffer<CR>
 nmap ,t :FufTaggedFile<CR>
 
-"CtrlP
-" ctrlp_working_path_mode - searching for file name (project/curr_dir)
 
+" Ignore these directories
+" set wildignore+=*/out/**
+" set wildignore+=*/vendor/**
+set wildignore+=*/.git/**
+
+
+"CtrlP
+" Set no max file limit
+let g:ctrlp_max_files = 0
+" ctrlp_working_path_mode - searching for file name (project/curr_dir)
 let g:ctrlp_working_path_mode = 'ra'	" 0 to search only on current dir
+
+
+" Search in certain directories a large project (hardcoded for now)
+" cnoremap %proj <c-r>=expand('~/Projects/some-project')<cr>
+" " ga = go api
+" map <Leader>ga :CtrlP %proj/api/<cr>
+" " gf = go frontend
+" map <Leader>gf :CtrlP %proj/some/long/path/to/frontend/code/<cr> 
+
+
 
 " http://vimhelp.appspot.com/digraph.txt.html
 " Ctrl-K Dt for ▼ 	(also use :digraph )
@@ -416,3 +434,6 @@ if has("multi_byte")
   set encoding=utf-8                     " better default than latin1
   setglobal fileencoding=utf-8           " change default file encoding when writing new files
 endif
+
+command -nargs=+ Run :cexpr system("<args>") | copen
+

@@ -14,7 +14,8 @@ You can run `git pull` inside of `~/.vim` if you'd ever like to grab the latest 
 
 ```bash
 cd ~
-git clone git://github.com/tlhunter/vimrc.git .vim
+git clone git://github.com/kesavanm/VIM-my-PHP-IDE.git .vim
+
 ln -s ~/.vim/vimrc ~/.vimrc # Optional, needed for some VIM installations
 ```
 
@@ -23,7 +24,7 @@ ln -s ~/.vim/vimrc ~/.vimrc # Optional, needed for some VIM installations
 This method might be more sane. Simply downlaod the latest version, extract to `~/.vim`, and configure to your liking.
 
 ```bash
-wget https://github.com/tlhunter/vimrc/archive/master.zip
+wget https://github.com/kesavanm/VIM-my-PHP-IDE/archive/master.zip
 ```
 
 ## Features
@@ -68,6 +69,20 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * Use `o` to open the selected file in a new buffer
 * Use `t` to open the selected file in a new tab
 
+
+* Use `I (shift + i)`   to list hidden files.
+* Use `s` to vsplit the current window and open the selected file.
+* Use `i` to split the current window and open the selected file.
+* Use `t` to open file in new tab.
+* Use `m` to modify the file/directory to rename, move, delete or create a file/directory.
+* Use `shift + c` to move into the selected directory.
+* Use `u` to move back one level in the directory tree.
+* Use `x` to close the opened directory tree in which you’re in.
+* Use `return` to open a directory or file.
+* Use `j and k or the cursor keys` to move up and down in the list.
+
+
+
 ### Tabs
 
 * Use `Cmd t` (or `Alt t` in Linux GVim) to open a new tab
@@ -81,6 +96,35 @@ Many of them can be seen [here](http://vimcolors.com/).
 Set the scheme using `:colorscheme NAME`.
 
 * Use `<Leader>x` to switch to a random theme.
+* F8 - Theme
+
+
+### Ctrl-P FizzyFinder
+
+* Ctrl-D		to switch modes [To Dir search]
+* Ctrl-F/B/M	to switch between files/buffers/MUF (Most Used Files)
+
+
+### C-Tags
+
+*  g C-] 		is very useful. It opens a quick dialog to select one between multiple definitions. 
+*  ctrl-t   - goes to previous spot where you called :tag
+*  ctrl-]   - calls :tag on the word under the cursor
+  
+*  :tag /<pattern>
+*  :stag /<pattern>
+*  :ptag /<pattern>
+*  :tselect /<pattern>
+*  :tjump /<pattern>
+*  :ptselect /<pattern>
+*  :ptjump /<pattern>
+*  :tag TAB            - list the known tags
+*  :tag function_name  - jump to that function
+*  :ptag    - open tag in preview window (also ctrl-w })
+*  :pclose  - close preview window
+
+
+
 
 ### Text Navigation
 
@@ -93,3 +137,18 @@ Other than the myriad of built-in methods for navigating text...
 
 * Use `<Leader>c` to copy the highlighted text into the OS clipboard
 * Use `<Leader>v` to paste the OS clipboard into the document
+
+### General
+
+* gg Goto line #1
+* G  Goto EOF
+* N| Goto column N
+* or # to jump around between files and variables.
+
+* Ctrl f – Jump forward one full screen.
+* Ctrl b – Jump backwards one full screen
+* Ctrl d – Jump forward (down) a half screen
+* Ctrl u – Jump back (up) one half screen
+
+
+
