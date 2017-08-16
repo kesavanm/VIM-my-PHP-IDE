@@ -174,5 +174,16 @@ Other than the myriad of built-in methods for navigating text...
 
 * :Bclose :Bc - Buffer close
 * :tabclose	- Tab close
-* :qa :qall 	- Quit all
+* :qa :qall - Quit all
+
+### Credits & Thanks 
+
+Please read their FAQ & README for better idea
+
+* All contirbutors to VIM and plugins
+* FuzzyFinder - https://github.com/vim-scripts/FuzzyFinder
+* CtrlP - https://github.com/kien/ctrlp.vim
+* nerdtree - https://github.com/scrooloose/nerdtree
+* Shameless self promo - https://github.com/kesavanm
+
 
