@@ -282,8 +282,8 @@ endfunction
 function! s:UI._indentLevelFor(line)
     "have to do this work around because match() returns bytes, not chars
     let numLeadBytes = match(a:line, '\M\[^ '.g:NERDTreeDirArrowExpandable.g:NERDTreeDirArrowCollapsible.']')
-    let leadChars = strchars(a:line[0:numLeadBytes-1])
-
+"    let leadChars = strchars(a:line[0:numLeadBytes-1])
+    let leadChars = len(split(a:line[0:numLeadBytes-1], '\zs') 
     return leadChars / s:UI.IndentWid()
 endfunction
 
