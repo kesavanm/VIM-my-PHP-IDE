@@ -18,11 +18,9 @@ mkdir my-old-vim-stuff ; mv ~/.vim* my-old-vim-stuff # backing up your old vim
 git clone git://github.com/kesavanm/VIM-my-PHP-IDE.git .vim
 ln -s ~/.vim/vimrc ~/.vimrc # Optional, needed for some VIM installations
 ```
-
 ### One Time Download
 
 This method might be more sane. Simply downlaod the latest version, extract to `~/.vim`, and configure to your liking.
-
 ```bash
 wget https://github.com/kesavanm/VIM-my-PHP-IDE/archive/master.zip
 ```
@@ -48,6 +46,27 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * While in MacVIM, you can swipe left and right to switch between open files
 * Use `Cmd Shift N` (or `Alt n` in Linux GVim) to open a new empty buffer
 
+* `:e ~/path/to/file` - Opens the file as a buffer.
+* `:sp ~/path/to/file` - Opens the file in a new (Window) view port.
+* `:Bclose` - Close the particular buffer. `:q` should be avoided unless need.
+* `:tabe ~/path/to/file` - Opens for edit in a tab. Use `:tabclose` once done.
+* `:Sex ~` or `:Sexplore` -	Opens a quick (split) explorer of the argument (Home dir ~ , in this case) 
+* `:Tex & :Vex`		- Native vim options beside `:Sex`
+
+### Tabs
+
+* Use `Cmd t` (or `Alt t` in Linux GVim) to open a new tab
+* Use `Cmd w` (or `Alt w` in Linux GVim) to close the current tab
+* Use `Cmd 1` to `Cmd 9` (or `Alt 1` to `Alt 9` in Linux GVim) to navigate to the specified tab
+
+* `:tabnew` - New tab to start with 
+* `:tab sp` - Convert the current buffer into Tab
+* `:sball` - All buffers into splitted . I don't recommend this :(
+* `:tab sball` - If you accidently made the above command & locked in splitted mode :)
+* `:tab ball` -  All buffers into Tabs
+* `:tabo`	- All tabs into buffers
+* `F6`	- Toggle command to convert all opend files between buffers & tabs 
+
 ### Viewports (Windows/Splits)
 
 * Use `<Leader>h` `<Leader>j` `<Leader>k` `<Leader>l` to navigate between viewports
@@ -59,6 +78,7 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 
 * Use `Ctrl ww` to switch between windows
 
+* `Ctrl-W c` - Close the buffer/window/tab  - Native command
 
 ### File Browser (NERDTree)
 
@@ -84,12 +104,6 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * Use `return` to open a directory or file.
 * Use `j and k or the cursor keys` to move up and down in the list.
 
-### Tabs
-
-* Use `Cmd t` (or `Alt t` in Linux GVim) to open a new tab
-* Use `Cmd w` (or `Alt w` in Linux GVim) to close the current tab
-* Use `Cmd 1` to `Cmd 9` (or `Alt 1` to `Alt 9` in Linux GVim) to navigate to the specified tab
-
 ### Themes (ColorSchemes)
 
 There is a very large collection of colorschemes in this repository.
@@ -98,7 +112,6 @@ Set the scheme using `:colorscheme NAME`.
 
 * Use `<Leader>x` to switch to a random theme.
 * F8 - Theme
-
 
 ### Ctrl-P FizzyFinder
 
@@ -118,25 +131,24 @@ $ make && make install
 ```
 
 * Generate the tags file to hold all your project info
-```bash
-$ctags -R --languages=php .	(you can ignore languages option as well )
- ```
+```bash $ctags -R --languages=php .	(you can ignore languages option as well ) ```
 
-*  g C-] 		is very useful. It opens a quick dialog to select one between multiple definitions. 
-*  ctrl-t   - goes to previous spot where you called :tag
-*  ctrl-]   - calls :tag on the word under the cursor
+* `g Ctrl-]` - is very useful. It opens a quick dialog to select one between multiple definitions.
+* ctrl-t   - goes to previous spot where you called :tag
+* ctrl-]   - calls :tag on the word under the cursor
  
-*  :tag /<pattern>
-*  :stag /<pattern>
-*  :ptag /<pattern>
-*  :tselect /<pattern>
-*  :tjump /<pattern>
-*  :ptselect /<pattern>
-*  :ptjump /<pattern>
-*  :tag TAB            - list the known tags
-*  :tag function_name  - jump to that function
-*  :ptag    - open tag in preview window (also ctrl-w })
-*  :pclose  - close preview window
+* `:tag / <pattern>`
+* `:stag / <pattern>`
+* `:ptag / <pattern>`
+* `:tselect / <pattern>`
+* `:tjump / <pattern>`
+* `:ptselect / <pattern>`
+* `:ptjump / <pattern>`
+*
+* `:tag TAB`            - list the known tags
+* `:tag function_name`  - jump to that function
+* `:ptag`    - open tag in preview window (also ctrl-w })
+* `:pclose`  - close preview window
 
 ### Quick Fix
 :copen  - Opens quick fix window
@@ -171,18 +183,24 @@ Other than the myriad of built-in methods for navigating text...
 * Ctrl d – Jump forward (down) a half screen
 * Ctrl u – Jump back (up) one half screen
 
+### Action over all Buffers
 
-### Closing Windows/Tabs/VI
+`bufdo! %s/pattern/replace/ge`  - Subsuiting the replace with pattern on all buffers
 
-* :Bclose :Bc - Buffer close
-* :tabclose	- Tab close
-* :qa :qall - Quit all
+### Closing Windows/Tabs/VIM
+
+* `:Bclose` `:Bc` - Buffer close , emptying buffer
+* `:bd` 	- Buffer delete
+* `:tabclose`	- Tab close
+* `:wa` - Write all
+* `:qa` `:qall` - Quit all
 
 ### Credits & Thanks 
 
 Please read their FAQ & README for better idea
 
 * All contirbutors to VIM and plugins
+* TLHunter - Where this is forked. https://github.com/tlhunter/vimrc
 * FuzzyFinder - https://github.com/vim-scripts/FuzzyFinder
 * CtrlP - https://github.com/kien/ctrlp.vim
 * nerdtree - https://github.com/scrooloose/nerdtree

@@ -437,3 +437,7 @@ endif
 
 command -nargs=+ Run :cexpr system("<args>") | copen
 
+let notabs = 0
+nnoremap <silent> <F6> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Bar>:tab ball<Bar>:tabn<Bar>:endif<CR>
+
+cabbrev tabv tab sview +setlocal\ nomodifiable
