@@ -436,13 +436,16 @@ if has("multi_byte")
 endif
 
 command -nargs=+ Run :cexpr system("<args>") | copen
+command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
-let notabs = 0
-nnoremap <silent> <F6> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Bar>:tab ball<Bar>:tabn<Bar>:endif<CR>
 
 cabbrev tabv tab sview +setlocal\ nomodifiable
-map <F4> <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
 map <F3> :Rgrep <CR> 
+map <F4> <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
+nnoremap <F5> :R
+let notabs = 0
+nnoremap <silent> <F6> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Bar>:tab ball<Bar>:tabn<Bar>:endif<CR>
+map <F7> :echo 'Current time is ' . strftime('%c')<CR>
 set rtp+=~/.fzf
 
 
@@ -481,10 +484,3 @@ Plug '~/my-prototype-plugin'
 " Initialize plugin system
 call plug#end()
 
-
-" nnoremap <F5>:cexpr system("<args>")| copen <CR>
-" map <F5> :read  <CR>
-map <F7> :echo 'Current time is ' . strftime('%c')<CR>
-
-" :nnoremap <F5> :system  <C-R><C-W> *<CR>
-" :nnoremap <F5> :system . expand('<cword>') . ' *'<CR>

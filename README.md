@@ -186,6 +186,10 @@ Other than the myriad of built-in methods for navigating text...
 * :se  - shortcut for :set
 * :set mouse=a  - set vim in mouse mode ; No right click , quick paste
 * :set mouse=	- set vim in quick edit mode
+`F4` - Alias for the mouse mode - toggle
+
+`F5` - Alias for the `:Run` `:R` - Execute a system command and send the outcome to QuickFix window
+`F7` - Show current date/time
 
 * gg Goto line #1
 * G  Goto EOF
@@ -226,5 +230,4 @@ Please read their FAQ & README for better idea
 
 
 ### TODO
-`F5` - Alias for the `:Run`
 
