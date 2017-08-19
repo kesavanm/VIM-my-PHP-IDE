@@ -144,16 +144,30 @@ $ make && make install
 * `:tjump / <pattern>`
 * `:ptselect / <pattern>`
 * `:ptjump / <pattern>`
-*
+
 * `:tag TAB`            - list the known tags
 * `:tag function_name`  - jump to that function
 * `:ptag`    - open tag in preview window (also ctrl-w })
 * `:pclose`  - close preview window
 
+### Search for a pattern
+
+* `:vimgrep pattern **/*php ~/path/to/project` - Native vimgrep. Searching `php` files under `~/path/to/project`. `**` stands for recursively from the current directory. Also `:grep` and more avail.
+* `:vim` - Alias for `:vimgrep`
+* `F3` - Start searching
+* `:Rgrep` `:Grep` - recursive grep and grep . More at http://www.vim.org/scripts/script.php?script_id=311
+
+The following help you to filter over search results.
+
+* `<Leader>g` - input pattern to do further filtering
+* `<Leader>v` - input pattern to do further inverted filtering (like grep -v)
+* `<Leader>r` - restore the Quickfix/location-list with original entries
+
+
 ### Quick Fix
-:copen  - Opens quick fix window
-:cclose	- Closes the quick fix window
-:Run <command> 	- Run the command and send the output to Quick fix window
+`:copen`  - Opens quick fix window
+`:cclose`	- Closes the quick fix window
+`:Run <command>` 	- Run the command and send the output to Quick fix window
 
 ### Text Navigation
 
@@ -204,6 +218,13 @@ Please read their FAQ & README for better idea
 * FuzzyFinder - https://github.com/vim-scripts/FuzzyFinder
 * CtrlP - https://github.com/kien/ctrlp.vim
 * nerdtree - https://github.com/scrooloose/nerdtree
+* QFGrep - https://github.com/sk1418/QFGrep
+* grep	-	https://github.com/yegappan/grep
+* fzf - https://github.com/junegunn/fzf	(Preview : https://junegunn.kr/2016/07/fzf-git)  
+
 * Shameless self promo - https://github.com/kesavanm
 
+
+### TODO
+`F5` - Alias for the `:Run`
 
