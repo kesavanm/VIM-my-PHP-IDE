@@ -13,9 +13,9 @@ Run these commands to get this Vim configuration working on your OS X or Linux m
 You can run `git pull` inside of `~/.vim` if you'd ever like to grab the latest version.
 
 ```bash
-mkdir -p ~/my-old-vim-stuff ; mv ~/.vim* my-old-vim-stuff # backing up your old vim
+mkdir -p ~/my-old-vim-stuff ; mv ~/.vim* ~/my-old-vim-stuff # backing up your old vim
 git clone git://github.com/kesavanm/VIM-my-PHP-IDE.git ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc # Optional, needed for some VIM installations
+ln -s ~/.vim/vimrc ~/.vimrc # Needed for some VIM installations
 ```
 ### One Time Download
 
