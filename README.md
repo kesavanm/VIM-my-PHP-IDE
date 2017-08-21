@@ -164,7 +164,7 @@ The following help you to filter over search results.
 
 
 ### Quick Fix
- ` - Toggle between Quicklist window
+Use backtick  (\`) -   Toggle between Quicklist window
 `:copen`  - Opens quick fix window
 `:cclose`	- Closes the quick fix window
 `:Run <command>` 	- Run the command and send the output to Quick fix window
