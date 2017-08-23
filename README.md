@@ -230,9 +230,9 @@ F9  |Function explorer | Open Class/Method/Function/Variable definitions in Righ
 ` | QuickFix Toggle  | Toggle on QuickFix window
 
 ### Commands for Quick Referenece
-Command | Shortcut | Action| Category|  Notes
--|
-i R`:open ~/foo.txt` | `:o ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
+|Command | Shortcut | Action| Category|  Notes|
+|--------|----------|-------|---------|-------|
+`:open ~/foo.txt` | `:o ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
 `:edit ~/foo.txt` | `:e ~/foo.txt`| File edit |File Operation | Opens file for edit in a new buffer
 `:view foo.bar` | | File view |File Operation | View file (read-only) in a new buffer
 `:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
