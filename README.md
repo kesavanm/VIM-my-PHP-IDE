@@ -216,8 +216,8 @@ Other than the myriad of built-in methods for navigating text...
 
 ### Key Shortcuts - Quick Referenece
 
-Key	|Action|Notes
--|    
+|Key|Action|Notes|
+|---|------|-----|    
 F1  | VIM - Help       | VIM Online Help for your installed version
 F2  |PASTE setting     | Toggle PASTE setting in NORMAL Mode (`set :paste`)  
 F3	|Find pattern      | Search for a pattern string inside your project files
