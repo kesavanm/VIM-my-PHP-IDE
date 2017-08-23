@@ -213,6 +213,55 @@ Other than the myriad of built-in methods for navigating text...
 * `:wa` - Write all
 * `:qa` `:qall` - Quit all
 
+
+### Key Shortcuts - Quick Referenece
+
+Key	|Action|Notes
+-|    
+F1  | VIM - Help       | VIM Online Help for your installed version
+F2  |PASTE setting     | Toggle PASTE setting in NORMAL Mode (`set :paste`)  
+F3	|Find pattern      | Search for a pattern string inside your project files
+F4	|Mouse mode toggle | Toggle between Mouse mode On and Off (`:set mouse=a`)
+F5	|Run command       | Execute an external command and populate the outcome in QuickFix window (`:Run`)
+F6  |Tab Buffer Switch | Toggle command to convert all opend files between buffers & tabs
+F7  |Current Date/Time | Show current date/time on QuickFix window
+F8  |Theme changer     | Reload a new Theme
+F9  |Function explorer | Open Class/Method/Function/Variable definitions in Right side pane
+` | QuickFix Toggle  | Toggle on QuickFix window
+
+### Commands for Quick Referenece
+Command | Shortcut | Action| Category|  Notes
+-|
+i R`:open ~/foo.txt` | `:o ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
+`:edit ~/foo.txt` | `:e ~/foo.txt`| File edit |File Operation | Opens file for edit in a new buffer
+`:view foo.bar` | | File view |File Operation | View file (read-only) in a new buffer
+`:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
+`:write ~/bar.sh` | `:w ~/bar.sh`| File write |File Operation | Writes buffer/tab content into new file
+`:<command>!` |  |Force it | File Operation|  Do it by force. Ex. `:w!` Write into file by force
+`:split ~/bar.sh`|`:sp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Horizontal)
+`:vsplit ~/bar.sh`|`:vsp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Vertical)
+`:tabnew` | | File edit |File Operation | Opens a new tab for edit/write
+`:tabedit foo.sh` |`:tabe foo.sh` | File edit |File Operation | Opens file for edit in  new tab
+`<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
+`CTRL+w w`| | Switch Window | Window Mgmt* | Switch to next window.
+`:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
+`:Bclose` | `<space>+q `|  Buffer Close |Window Mgmt | Closes current buffer ; Next buffer loaded in current window
+`:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | Deletes current buffer ; Closes window if need.
+`:quit`  |`:q`|Quit window | Window Mgmt | Quit (Exits) current window
+`:quitall`  |`:qa`|Quit All | Window Mgmt* | Quit (Exits) all window. Bye-Bye !!!
+`:bprevious`|`:bp` or `CTRL+h` |Goto Buffer - Left | Window Mgmt | Take you to next left/previous buffer
+`:bnext`|`:bn` or `CTRL+l`|Goto Buffer - Right | Window Mgmt | Take you to next right/next buffer
+`:Sexplore ~` | `:Sex ~`| VIM Explorer|File Explorer	|Opens (split) explorer (Home dir ~ , in this case)
+`:Vexplore ` | `:Vex `| VIM Explorer|File Explorer	|Opens (vertical) explorer (Current dir , in this case)
+`:Texplore [arg]` | `:Tex [arg]`| VIM Explorer|File Explorer	| Opens  explorer in TAB
+
+### Notes
+- Buffer is the real representation of File in memory.
+- Buffer Operation is final direct impact to actual file
+- Last Buffer can't made as Tab
+- Tab is another view of Buffer. Buffer commands (`:Bclose`  , `:bd` still works in Tab View)
+
+
 ### Credits & Thanks 
 
 Please read their FAQ & README for better idea
