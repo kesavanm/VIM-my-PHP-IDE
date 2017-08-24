@@ -49,7 +49,7 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * `:sp ~/path/to/file` - Opens the file in a new (Window) view port.
 * `:Bclose` - Close the particular buffer. `:q` should be avoided unless need.
 * `:tabe ~/path/to/file` - Opens for edit in a tab. Use `:tabclose` once done.
-* `:Sex ~` or `:Sexplore` -	Opens a quick (split) explorer of the argument (Home dir ~ , in this case) 
+* `:Sex ~` or `:Sexplore` -	Opens a quick (split) explorer of the argument (Home dir ~ , in this case)
 * `:Tex & :Vex`		- Native vim options beside `:Sex`
 
 ### Tabs
@@ -58,13 +58,13 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * Use `Cmd w` (or `Alt w` in Linux GVim) to close the current tab
 * Use `Cmd 1` to `Cmd 9` (or `Alt 1` to `Alt 9` in Linux GVim) to navigate to the specified tab
 
-* `:tabnew` - New tab to start with 
+* `:tabnew` - New tab to start with
 * `:tab sp` - Convert the current buffer into Tab
 * `:sball` - All buffers into splitted . I don't recommend this :(
 * `:tab sball` - If you accidently made the above command & locked in splitted mode :)
 * `:tab ball` -  All buffers into Tabs
 * `:tabo`	- All tabs into buffers
-* `F6`	- Toggle command to convert all opend files between buffers & tabs 
+* `F6`	- Toggle command to convert all opend files between buffers & tabs
 
 ### Viewports (Windows/Splits)
 
@@ -135,7 +135,7 @@ $ make && make install
 * `g Ctrl-]` - is very useful. It opens a quick dialog to select one between multiple definitions.
 * ctrl-t   - goes to previous spot where you called :tag
 * ctrl-]   - calls :tag on the word under the cursor
- 
+
 * `:tag / <pattern>`
 * `:stag / <pattern>`
 * `:ptag / <pattern>`
@@ -218,75 +218,75 @@ Other than the myriad of built-in methods for navigating text...
 
 |Key|Action|Notes|
 |---|------|-----|    
-F1  | VIM - Help       | VIM Online Help for your installed version
-F2  |PASTE setting     | Toggle PASTE setting in NORMAL Mode (`set :paste`)  
-F3	|Find pattern      | Search for a pattern string inside your project files
-F4	|Mouse mode toggle | Toggle between Mouse mode On and Off (`:set mouse=a`)
-F5	|Run command       | Execute an external command and populate the outcome in QuickFix window (`:Run`)
-F6  |Tab Buffer Switch | Toggle command to convert all opend files between buffers & tabs
-F7  |Current Date/Time | Show current date/time on QuickFix window
-F8  |Theme changer     | Reload a new Theme
-F9  |Function explorer | Open Class/Method/Function/Variable definitions in Right side pane
-` | QuickFix Toggle  | Toggle on QuickFix window
+|F1 | VIM - Help       | VIM Online Help for your installed version
+|F2 |PASTE setting     | Toggle PASTE setting in NORMAL Mode (`set :paste`)  
+|F3	|Find pattern      | Search for a pattern string inside your project files
+|F4	|Mouse mode toggle | Toggle between Mouse mode On and Off (`:set mouse=a`)
+|F5	|Run command       | Execute an external command and populate the outcome in QuickFix window (`:Run`)
+|F6  |Tab Buffer Switch | Toggle command to convert all opend files between buffers & tabs
+|F7  |Current Date/Time | Show current date/time on Status
+|F8  |Theme changer     | Reload a new Theme
+|F9  |Function explorer | Open Class/Method/Function/Variable definitions in Right side pane
+|` | QuickFix Toggle  | Toggle on QuickFix window
 
 ### Commands for Quick Referenece
 |Command | Shortcut | Action| Category|  Notes|
 |--------|----------|-------|---------|-------|
-`:open ~/foo.txt` or `:edit ~/foo.txt` | `:o ~/foo.txt`or `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
-`:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
-`:<command>!` |  |Force it | File Operation|  Do it by force. Ex. `:w!` Write into file by force
-`:vsplit ~/bar.sh`|`:vsp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Vertical)
-`<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
+|`:open ~/foo.txt` or `:edit ~/foo.txt` | `:o ~/foo.txt`or `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
+|`:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
+|`:<command>!` |  |Force it | File Operation|  Do it by force. Ex. `:w!` Write into file by force
+|`:vsplit ~/bar.sh`|`:vsp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Vertical)
+|`<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
 ||`I`| NERDTree|File Explorer	|list hidden files
 ||`u`| NERDTree | File Explorer | Move one level up
-`<space>+h/j/k/l`| `CTRL+w w`| Switch Window | Window Mgmt* | Switch to window (Left/Down/Up/Right).
-`:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
-`:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | Deletes current buffer ; Closes window if need.
-`:quitall`  |`:qa`|Quit All | Window Mgmt* | Quit (Exits) all window. Bye-Bye !!!
-`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
+|`<space>+h/j/k/l`| `CTRL+w w`| Switch Window | Window Mgmt* | Switch to window (Left/Down/Up/Right).
+|`:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
+|`:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | Deletes current buffer ; Closes window if need.
+|`:quitall`  |`:qa`|Quit All | Window Mgmt* | Quit (Exits) all window. Bye-Bye !!!
+|`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
 ||`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
 ||`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
 
 ### Commands for Full Referenece
 |Command | Shortcut | Action| Category|  Notes|
 |--------|----------|-------|---------|-------|
-~:open ~/foo.txt` or `:edit ~/foo.txt` | `:o ~/foo.txt`or `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
-`:view foo.bar` | | File view |File Operation | View file (read-only) in a new buffer
-`:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
-`:write ~/bar.sh` | `:w ~/bar.sh`| File write |File Operation | Writes buffer/tab content into new file
-`:<command>!` |  |Force it | File Operation|  Do it by force. Ex. `:w!` Write into file by force
-`:split ~/bar.sh`|`:sp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Horizontal)
-`:vsplit ~/bar.sh`|`:vsp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Vertical)
-`:tabnew` | | File edit |File Operation | Opens a new tab for edit/write
-`:tabedit foo.sh` |`:tabe foo.sh` | File edit |File Operation | Opens file for edit in  new tab
-`:tabo` |`F6` | File edit |File Operation | All tabs into buffers
-`:tab ball` |`F6` | File edit |File Operation | All buffers into Tabs
-`<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
-`CTRL+w w`| | Switch Window | Window Mgmt* | Switch to next window.
+|~:open ~/foo.txt` or `:edit ~/foo.txt` | `:o ~/foo.txt`or `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
+|`:view foo.bar` | | File view |File Operation | View file (read-only) in a new buffer
+|`:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
+|`:write ~/bar.sh` | `:w ~/bar.sh`| File write |File Operation | Writes buffer/tab content into new file
+|`:<command>!` |  |Force it | File Operation|  Do it by force. Ex. `:w!` Write into file by force
+|`:split ~/bar.sh`|`:sp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Horizontal)
+|`:vsplit ~/bar.sh`|`:vsp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Vertical)
+|`:tabnew` | | File edit |File Operation | Opens a new tab for edit/write
+|`:tabedit foo.sh` |`:tabe foo.sh` | File edit |File Operation | Opens file for edit in  new tab
+|`:tabo` |`F6` | File edit |File Operation | All tabs into buffers
+|`:tab ball` |`F6` | File edit |File Operation | All buffers into Tabs
+|`<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
+|`CTRL+w w`| | Switch Window | Window Mgmt* | Switch to next window.
 ||`u`| NERDTree | File Explorer | Move one level up
-`C`| `<CR>`|NERDTree | File Explorer | Just press `ENTER` to Move into the directory
+|`C`| `<CR>`|NERDTree | File Explorer | Just press `ENTER` to Move into the directory
 ||`F`| NERDTree | File Explorer | Show/Hide files
 ||`o` or `t` | NERDTree  |File Operation |Opens file for edit in  new buffer/tab
 ||`s` or `i` | NERDTree  |File Operation |Opens file for edit in  splited buffer (vertical/horizontal)
 ||`I`| NERDTree|File Explorer	|list hidden files
- `<space>+h/j/k/l`| `CTRL+w w`| Switch Window | Window Mgmt* | Switch to window (Left/Down/Up/Right).
-`:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
-`:Bclose` | `<space>+q `|  Buffer Close |Window Mgmt | Closes current buffer ; Next buffer loaded in current window
-`:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | Deletes current buffer ; Closes window if need.
-`:quit`  |`:q`|Quit window | Window Mgmt | Quit (Exits) current window
-`:quitall`  |`:qa`|Quit All | Window Mgmt* | Quit (Exits) all window. Bye-Bye !!!
-`:bprevious`|`:bp` or `CTRL+h` |Goto Buffer - Left | Window Mgmt | Take you to next left/previous buffer
-`:bnext`|`:bn` or `CTRL+l`|Goto Buffer - Right | Window Mgmt | Take you to next right/next buffer
-`:Sexplore ~` | `:Sex ~`| VIM Explorer|File Explorer	|Opens (split) explorer (Home dir ~ , in this case)
-`:Vexplore ` | `:Vex `| VIM Explorer|File Explorer	|Opens (vertical) explorer (Current dir , in this case)
-`:Texplore [arg]` | `:Tex [arg]`| VIM Explorer|File Explorer	| Opens  explorer in TAB
-`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
-`:stag` ||Goto definition|CTAG|Takes to exact definition in Horizontal split window. Quick ref on Method/Function/Class origin
-`:tselect` or `:ptselect`||List definitions|CTAG|List other definition(s). Useful to find similar Method/Function/Class definitions
+| `<space>+h/j/k/l`| `CTRL+w w`| Switch Window | Window Mgmt* | Switch to window (Left/Down/Up/Right).
+|`:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
+|`:Bclose` | `<space>+q `|  Buffer Close |Window Mgmt | Closes current buffer ; Next buffer loaded in current window
+|`:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | Deletes current buffer ; Closes window if need.
+|`:quit`  |`:q`|Quit window | Window Mgmt | Quit (Exits) current window
+|`:quitall`  |`:qa`|Quit All | Window Mgmt* | Quit (Exits) all window. Bye-Bye !!!
+|`:bprevious`|`:bp` or `CTRL+h` |Goto Buffer - Left | Window Mgmt | Take you to next left/previous buffer
+|`:bnext`|`:bn` or `CTRL+l`|Goto Buffer - Right | Window Mgmt | Take you to next right/next buffer
+|`:Sexplore ~` | `:Sex ~`| VIM Explorer|File Explorer	|Opens (split) explorer (Home dir ~ , in this case)
+|`:Vexplore ` | `:Vex `| VIM Explorer|File Explorer	|Opens (vertical) explorer (Current dir , in this case)
+|`:Texplore [arg]` | `:Tex [arg]`| VIM Explorer|File Explorer	| Opens  explorer in TAB
+|`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
+|`:stag` ||Goto definition|CTAG|Takes to exact definition in Horizontal split window. Quick ref on Method/Function/Class origin
+|`:tselect` or `:ptselect`||List definitions|CTAG|List other definition(s). Useful to find similar Method/Function/Class definitions
 ||`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
 ||`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
-`:vimgrep`|`:vim`|VIM Native search| Search| **Syntax:**`:vimgrep <pattern> **/*php ~/path/to/project`. Searching `php` files under ``~/path/to/project`. `**` stands for *recursively*
-`:grep` ||GNU search| Search|Search using GNU regex pattern style
+|`:vimgrep`|`:vim`|VIM Native search| Search| **Syntax:**`:vimgrep <pattern> **/*php ~/path/to/project`. Searching `php` files under `~/path/to/project`. `**` stands for *recursively*
+|`:grep` ||GNU search| Search|Search using GNU regex pattern style
 ||`<space>+g`|Filtering within search |Search| Filter the search results with pattern
 ||`<space>+v`|Inverse filtering on search |Search|Inverse filter the search results with pattern
 ||`<space>+r`|Restore search results|Search| Restore the original search results
@@ -299,7 +299,7 @@ F9  |Function explorer | Open Class/Method/Function/Variable definitions in Righ
 - Tab is another view of Buffer. Buffer commands (`:Bclose`  , `:bd` still works in Tab View)
 
 
-### Credits & Thanks 
+### Credits & Thanks
 
 Please read their FAQ & README for better idea
 
@@ -316,4 +316,3 @@ Please read their FAQ & README for better idea
 
 
 ### TODO
-
