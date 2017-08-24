@@ -238,12 +238,16 @@ let g:vim_markdown_folding_disabled = 1
 
 
 "------  Airline Settings ------
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+let g:airline_left_sep='»'
+let g:airline_right_sep='«'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ' '
+:set laststatus=2				" always show the Airline
+let g:airline_theme='solarized' " try simple powerlineish , wombat & more. [Help] :AirlineTheme <keyword>
 
+" --- VIM
+:color solarized				" vim theme [Tip] :color <keyword>
 
 "------  Text File Settings  ------
 :autocmd! BufNewFile,BufRead *.txt,*.md,*.tex set wrap
