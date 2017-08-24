@@ -237,15 +237,15 @@ F9  |Function explorer | Open Class/Method/Function/Variable definitions in Righ
 `:<command>!` |  |Force it | File Operation|  Do it by force. Ex. `:w!` Write into file by force
 `:vsplit ~/bar.sh`|`:vsp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Vertical)
 `<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
-|`I`| NERDTree|File Explorer	|list hidden files
-|`u`| NERDTree | File Explorer | Move one level up
+||`I`| NERDTree|File Explorer	|list hidden files
+||`u`| NERDTree | File Explorer | Move one level up
 `<space>+h/j/k/l`| `CTRL+w w`| Switch Window | Window Mgmt* | Switch to window (Left/Down/Up/Right).
 `:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
 `:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | Deletes current buffer ; Closes window if need.
 `:quitall`  |`:qa`|Quit All | Window Mgmt* | Quit (Exits) all window. Bye-Bye !!!
 `:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
-|`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
-|`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
+||`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
+||`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
 
 ### Commands for Full Referenece
 |Command | Shortcut | Action| Category|  Notes|
@@ -263,12 +263,12 @@ F9  |Function explorer | Open Class/Method/Function/Variable definitions in Righ
 `:tab ball` |`F6` | File edit |File Operation | All buffers into Tabs
 `<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
 `CTRL+w w`| | Switch Window | Window Mgmt* | Switch to next window.
-|`u`| NERDTree | File Explorer | Move one level up
+||`u`| NERDTree | File Explorer | Move one level up
 `C`| `<CR>`|NERDTree | File Explorer | Just press `ENTER` to Move into the directory
-|`F`| NERDTree | File Explorer | Show/Hide files
-|`o` or `t` | NERDTree  |File Operation |Opens file for edit in  new buffer/tab
-|`s` or `i` | NERDTree  |File Operation |Opens file for edit in  splited buffer (vertical/horizontal)
- |`I`| NERDTree|File Explorer	|list hidden files
+||`F`| NERDTree | File Explorer | Show/Hide files
+||`o` or `t` | NERDTree  |File Operation |Opens file for edit in  new buffer/tab
+||`s` or `i` | NERDTree  |File Operation |Opens file for edit in  splited buffer (vertical/horizontal)
+||`I`| NERDTree|File Explorer	|list hidden files
  `<space>+h/j/k/l`| `CTRL+w w`| Switch Window | Window Mgmt* | Switch to window (Left/Down/Up/Right).
 `:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
 `:Bclose` | `<space>+q `|  Buffer Close |Window Mgmt | Closes current buffer ; Next buffer loaded in current window
@@ -283,13 +283,13 @@ F9  |Function explorer | Open Class/Method/Function/Variable definitions in Righ
 `:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
 `:stag` ||Goto definition|CTAG|Takes to exact definition in Horizontal split window. Quick ref on Method/Function/Class origin
 `:tselect` or `:ptselect`||List definitions|CTAG|List other definition(s). Useful to find similar Method/Function/Class definitions
-|`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
-|`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
+||`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
+||`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
 `:vimgrep`|`:vim`|VIM Native search| Search| **Syntax:**`:vimgrep <pattern> **/*php ~/path/to/project`. Searching `php` files under ``~/path/to/project`. `**` stands for *recursively*
 `:grep` ||GNU search| Search|Search using GNU regex pattern style
-|`<space>+g`|Filtering within search |Search| Filter the search results with pattern
-|`<space>+v`|Inverse filtering on search |Search|Inverse filter the search results with pattern
-|`<space>+r`|Restore search results|Search| Restore the original search results
+||`<space>+g`|Filtering within search |Search| Filter the search results with pattern
+||`<space>+v`|Inverse filtering on search |Search|Inverse filter the search results with pattern
+||`<space>+r`|Restore search results|Search| Restore the original search results
 
 
 ### Notes
