@@ -9,14 +9,14 @@ I love this configuration at my work & home
 
 ### Clone with GIT
 
-Run these commands to get this Vim configuration working on your OS X or Linux machine.
+Run these commands to get this Vim configuration working on your GNU/Linux machine.
 You can run `git pull` inside of `~/.vim` if you'd ever like to grab the latest version.
-
 ```bash
-mkdir -p ~/my-old-vim-stuff ; mv ~/.vim* ~/my-old-vim-stuff # backing up your old vim
-git clone git://github.com/kesavanm/VIM-my-PHP-IDE.git ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc # Needed for some VIM installations
+mkdir -p ~/my-old-vim-stuff ; mv ~/.vim* ~/my-old-vim-stuff   #1 backing up your old vim
+git clone git://github.com/kesavanm/VIM-my-PHP-IDE.git ~/.vim #2 clone & install
+ln -s ~/.vim/vimrc ~/.vimrc                                   #3 needed for some VIM version
 ```
+
 ### One Time Download
 
 This method might be more sane. Simply downlaod the latest version, extract to `~/.vim`, and configure to your liking.
@@ -232,8 +232,25 @@ F9  |Function explorer | Open Class/Method/Function/Variable definitions in Righ
 ### Commands for Quick Referenece
 |Command | Shortcut | Action| Category|  Notes|
 |--------|----------|-------|---------|-------|
-`:open ~/foo.txt` | `:o ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
-`:edit ~/foo.txt` | `:e ~/foo.txt`| File edit |File Operation | Opens file for edit in a new buffer
+`:open ~/foo.txt` or `:edit ~/foo.txt` | `:o ~/foo.txt`or `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
+`:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
+`:<command>!` |  |Force it | File Operation|  Do it by force. Ex. `:w!` Write into file by force
+`:vsplit ~/bar.sh`|`:vsp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Vertical)
+`<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
+|`I`| NERDTree|File Explorer	|list hidden files
+|`u`| NERDTree | File Explorer | Move one level up
+`<space>+h/j/k/l`| `CTRL+w w`| Switch Window | Window Mgmt* | Switch to window (Left/Down/Up/Right).
+`:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
+`:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | Deletes current buffer ; Closes window if need.
+`:quitall`  |`:qa`|Quit All | Window Mgmt* | Quit (Exits) all window. Bye-Bye !!!
+`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
+|`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
+|`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
+
+### Commands for Full Referenece
+|Command | Shortcut | Action| Category|  Notes|
+|--------|----------|-------|---------|-------|
+~:open ~/foo.txt` or `:edit ~/foo.txt` | `:o ~/foo.txt`or `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
 `:view foo.bar` | | File view |File Operation | View file (read-only) in a new buffer
 `:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
 `:write ~/bar.sh` | `:w ~/bar.sh`| File write |File Operation | Writes buffer/tab content into new file
@@ -242,8 +259,17 @@ F9  |Function explorer | Open Class/Method/Function/Variable definitions in Righ
 `:vsplit ~/bar.sh`|`:vsp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Vertical)
 `:tabnew` | | File edit |File Operation | Opens a new tab for edit/write
 `:tabedit foo.sh` |`:tabe foo.sh` | File edit |File Operation | Opens file for edit in  new tab
+`:tabo` |`F6` | File edit |File Operation | All tabs into buffers
+`:tab ball` |`F6` | File edit |File Operation | All buffers into Tabs
 `<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
 `CTRL+w w`| | Switch Window | Window Mgmt* | Switch to next window.
+|`u`| NERDTree | File Explorer | Move one level up
+`C`| `<CR>`|NERDTree | File Explorer | Just press `ENTER` to Move into the directory
+|`F`| NERDTree | File Explorer | Show/Hide files
+|`o` or `t` | NERDTree  |File Operation |Opens file for edit in  new buffer/tab
+|`s` or `i` | NERDTree  |File Operation |Opens file for edit in  splited buffer (vertical/horizontal)
+ |`I`| NERDTree|File Explorer	|list hidden files
+ `<space>+h/j/k/l`| `CTRL+w w`| Switch Window | Window Mgmt* | Switch to window (Left/Down/Up/Right).
 `:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
 `:Bclose` | `<space>+q `|  Buffer Close |Window Mgmt | Closes current buffer ; Next buffer loaded in current window
 `:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | Deletes current buffer ; Closes window if need.
@@ -254,6 +280,17 @@ F9  |Function explorer | Open Class/Method/Function/Variable definitions in Righ
 `:Sexplore ~` | `:Sex ~`| VIM Explorer|File Explorer	|Opens (split) explorer (Home dir ~ , in this case)
 `:Vexplore ` | `:Vex `| VIM Explorer|File Explorer	|Opens (vertical) explorer (Current dir , in this case)
 `:Texplore [arg]` | `:Tex [arg]`| VIM Explorer|File Explorer	| Opens  explorer in TAB
+`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
+`:stag` ||Goto definition|CTAG|Takes to exact definition in Horizontal split window. Quick ref on Method/Function/Class origin
+`:tselect` or `:ptselect`||List definitions|CTAG|List other definition(s). Useful to find similar Method/Function/Class definitions
+|`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
+|`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
+`:vimgrep`|`:vim`|VIM Native search| Search| **Syntax:**`:vimgrep <pattern> **/*php ~/path/to/project`. Searching `php` files under ``~/path/to/project`. `**` stands for *recursively*
+`:grep` ||GNU search| Search|Search using GNU regex pattern style
+|`<space>+g`|Filtering within search |Search| Filter the search results with pattern
+|`<space>+v`|Inverse filtering on search |Search|Inverse filter the search results with pattern
+|`<space>+r`|Restore search results|Search| Restore the original search results
+
 
 ### Notes
 - Buffer is the real representation of File in memory.
