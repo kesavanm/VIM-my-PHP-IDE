@@ -238,13 +238,16 @@ let g:vim_markdown_folding_disabled = 1
 
 
 "------  Airline Settings ------
-let g:airline_left_sep='»'
-let g:airline_right_sep='«'
+let g:airline_right_sep = '◆'
+let g:airline#extensions#tabline#right_sep = '◆'
+let g:airline#extensions#tabline#right_alt_sep = '◆'
+let g:airline_left_sep = '░'
+let g:airline#extensions#tabline#left_sep = '░'
+let g:airline#extensions#tabline#left_alt_sep = '▒'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = ' '
+
 :set laststatus=2				" always show the Airline
-let g:airline_theme='solarized' " try simple powerlineish , wombat & more. [Help] :AirlineTheme <keyword>
+let g:airline_theme='wombat' 	" try simple powerlineish ,solarized & more. [Help] :AirlineTheme <keyword>
 
 " --- VIM
 :color solarized				" vim theme [Tip] :color <keyword>
@@ -454,42 +457,21 @@ set rtp+=~/.fzf
 
 
 call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-
-" Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  " Make sure you use single quotes
+Plug 'junegunn/vim-easy-align'									" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'		" Any valid git URL is allowed
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'				" Multiple Plug commands can be written in a single line using | separators
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }			" On-demand loading
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a non-master branch
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Plugin options
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
-
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }			" Using a non-master branch
+Plug 'fatih/vim-go', { 'tag': '*' }								" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }		" Plugin options
+Plug 'junegunn/fzf',{ 'dir': '~/.fzf', 'do': './install --all'} " Plugin outside ~/.vim/plugged with post-update hook
+Plug '~/my-prototype-plugin'									" Unmanaged plugin (manually installed and updated)
 " Initialize plugin system
 call plug#end()
 
 
-"
 " toggles the quickfix window.
 let g:lt_height = 10
 let g:jah_Quickfix_Win_Height = 12
