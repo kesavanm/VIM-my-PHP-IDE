@@ -391,7 +391,6 @@ set ignorecase
 set directory=~/.vim/tmp
 set modifiable
 set shell=/bin/bash
-set tags=/data/kmuthuvel/code/tags
 set nolist
 nmap <F9> :TagbarToggle<CR>
 nmap ,f :FufFileWithCurrentBufferDir<CR>
@@ -492,3 +491,5 @@ augroup QFixToggle
 augroup END
 nmap <silent> ` :QFix<CR>
 
+" TODO - End user customization 
+set tags=/data/kmuthuvel/code/tags
