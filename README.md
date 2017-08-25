@@ -246,6 +246,7 @@ Other than the myriad of built-in methods for navigating text...
 |`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
 ||`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
 ||`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
+|`CTRL+x` `CTRL+o`|| Init OMNI Search| Search | VIM Native auto-complete feature 
 
 ### Commands for Full Referenece
 |Command | Shortcut | Action| Category|  Notes|
@@ -290,6 +291,7 @@ Other than the myriad of built-in methods for navigating text...
 ||`<space>+g`|Filtering within search |Search| Filter the search results with pattern
 ||`<space>+v`|Inverse filtering on search |Search|Inverse filter the search results with pattern
 ||`<space>+r`|Restore search results|Search| Restore the original search results
+|`CTRL+x` `CTRL+o`|| Init OMNI Search| Search | VIM Native auto-complete feature. Check for other opts on `CTRL+x`
 
 
 ### Notes
@@ -316,3 +318,6 @@ Please read their FAQ & README for better idea
 
 
 ### TODO
+
+* Open session even when starting `vi` with argument
+
