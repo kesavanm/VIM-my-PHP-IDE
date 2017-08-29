@@ -480,7 +480,7 @@ autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
 
 let enduser_utf8_support = 1 
-source vimrc.extra
+source ~/.vim/vimrc.extra
 
 if enduser_utf8_support
     let g:airline_right_sep = '◀'

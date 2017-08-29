@@ -13,8 +13,8 @@ Run these commands to get this Vim configuration working on your GNU/Linux machi
 You can run `git pull` inside of `~/.vim` if you'd ever like to grab the latest version.
 ```bash
 mkdir -p ~/my-old-vim-stuff/bkup.`date +%Y%m%d`; mv ~/.vim* ~/my-old-vim-stuff/bkup.`date +%Y%m%d`  #1 backing up your old vim
-git clone git://github.com/kesavanm/VIM-my-PHP-IDE.git ~/.vim 										#2 clone & install
-ln -s ~/.vim/vimrc ~/.vimrc                                   										#3 needed for some VIM version
+git clone git://github.com/kesavanm/VIM-my-PHP-IDE.git ~/.vim                                       #2 clone & install
+ln -s ~/.vim/vimrc ~/.vimrc                                                                         #3 needed for some VIM version
 ```
 
 ### Post Install Recommendations
