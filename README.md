@@ -17,6 +17,11 @@ git clone git://github.com/kesavanm/VIM-my-PHP-IDE.git ~/.vim #2 clone & install
 ln -s ~/.vim/vimrc ~/.vimrc                                   #3 needed for some VIM version
 ```
 
+### Post Install Recommendations
+* Install `dejavu-fonts-ttf` and make it as default font, if you're using SSH clients `PuTTY` or it's forked version
+* MobaXterm will gives you better rendering
+* Create CTAG file and update in the .vimrc ( `set tags=/home/kmuthuvel/src/tags` ) Refer in the C-TAG section below
+
 ### One Time Download
 
 This method might be more sane. Simply downlaod the latest version, extract to `~/.vim`, and configure to your liking.
@@ -80,6 +85,11 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * `Ctrl-W c` - Close the buffer/window/tab  - Native command
 
 ### File Browser (NERDTree)
+
+* Use `<Leader>n` to toggle the file browser
+* Use standard movement keys to move around
+* Use `Ctrl j` and `Ctrl k` to move between siblings (aka skip over children in expanded folders)
+* Use `C` to make the highlighted node the current working directory
 
 * Use `<Leader>n` to toggle the file browser
 * Use standard movement keys to move around
@@ -302,11 +312,6 @@ Other than the myriad of built-in methods for navigating text...
 
 
 ### Credits & Thanks
-
-Please read their FAQ & README for better idea
-
-* All contirbutors to VIM and plugins
-* TLHunter - Where this is forked. https://github.com/tlhunter/vimrc
 * FuzzyFinder - https://github.com/vim-scripts/FuzzyFinder
 * CtrlP - https://github.com/kien/ctrlp.vim
 * nerdtree - https://github.com/scrooloose/nerdtree
@@ -319,5 +324,4 @@ Please read their FAQ & README for better idea
 
 ### TODO
 
-* Open session even when starting `vi` with argument
-
+* Open (previous) session even when starting `vi` with argument

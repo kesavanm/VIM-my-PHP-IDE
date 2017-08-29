@@ -232,18 +232,10 @@ au BufNewFile,BufRead *.ejs set filetype=html
 "------  SCSS Filetype Settings  ------
 autocmd FileType scss set iskeyword+=-
 
-
 "------  Markdown Settings  ------
 let g:vim_markdown_folding_disabled = 1
 
 
-"------  Airline Settings ------
-let g:airline_right_sep = '◆'
-let g:airline#extensions#tabline#right_sep = '◆'
-let g:airline#extensions#tabline#right_alt_sep = '◆'
-let g:airline_left_sep = '░'
-let g:airline#extensions#tabline#left_sep = '░'
-let g:airline#extensions#tabline#left_alt_sep = '▒'
 let g:airline#extensions#tabline#enabled = 1
 
 :set laststatus=2				" always show the Airline
@@ -419,14 +411,6 @@ let g:ctrlp_working_path_mode = 'ra'	" 0 to search only on current dir
 " map <Leader>gf :CtrlP %proj/some/long/path/to/frontend/code/<cr> 
 
 
-
-" http://vimhelp.appspot.com/digraph.txt.html
-" Ctrl-K Dt for ▼ 	(also use :digraph )
-
-let g:NERDTreeDirArrowExpandable = '»'
-let g:NERDTreeDirArrowCollapsible = '▼'
-"let g:NERDTreeDirArrowCollapsible = '-'
-
 set enc=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf8,prc
@@ -491,5 +475,30 @@ augroup QFixToggle
 augroup END
 nmap <silent> ` :QFix<CR>
 
-" TODO - End user customization 
-set tags=/data/kmuthuvel/code/tags
+
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+
+
+let enduser_utf8_support = 1 
+source vimrc.extra
+
+if enduser_utf8_support
+    let g:airline_right_sep = '◀'
+    let g:airline#extensions#tabline#right_sep = '◀'
+    let g:airline#extensions#tabline#right_alt_sep = '◀'
+    let g:airline_left_sep = '▶'
+    let g:airline#extensions#tabline#left_sep = '▶'
+    let g:airline#extensions#tabline#left_alt_sep = '▶'
+elseif !enduser_utf8_support
+    let g:airline_right_sep = '◆'
+    let g:airline#extensions#tabline#right_sep = '◆'
+    let g:airline#extensions#tabline#right_alt_sep = '◆'
+    let g:airline_left_sep = '░'
+    let g:airline#extensions#tabline#left_sep = '░'
+    let g:airline#extensions#tabline#left_alt_sep = '▒'
+
+    " http://vimhelp.appspot.com/digraph.txt.html " Ctrl-K Dt for ▼   (also use :digraph )
+    let g:NERDTreeDirArrowExpandable = '»'
+    let g:NERDTreeDirArrowCollapsible = '▼'   "let g:NERDTreeDirArrowCollapsible = '-'
+endif
+
