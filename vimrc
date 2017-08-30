@@ -448,6 +448,7 @@ Plug 'fatih/vim-go', { 'tag': '*' }								" Using a tagged release; wildcard al
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }		" Plugin options
 Plug 'junegunn/fzf',{ 'dir': '~/.fzf', 'do': './install --all'} " Plugin outside ~/.vim/plugged with post-update hook
 Plug '~/my-prototype-plugin'									" Unmanaged plugin (manually installed and updated)
+Plug 'ervandew/supertab'
 " Initialize plugin system
 call plug#end()
 
@@ -480,7 +481,7 @@ set laststatus=2				" always show the Airline
 let g:airline_theme='wombat' 	" try simple powerlineish ,solarized & more. [Help] :AirlineTheme <keyword>
 
 color adam 					"	solarized	vim theme [Tip] :color <keyword>
-autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+autocmd  FileType  php setlocal omnifunc=phpcomplete#CompletePHP
 source ~/.vim/vimrc.extra
 autocmd VimEnter * TagbarOpen
 
@@ -506,3 +507,45 @@ elseif !enduser_utf8_support
 	let g:tagbar_iconchars = ['+', '-']
 endif
 
+autocmd  FileType  php setlocal omnifunc=phpcomplete#CompletePHP
+
+function! Smart_TabComplete()
+  let line = getline('.')                         " current line
+
+  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
+                                                  " line to one character right
+                                                  " of the cursor
+  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
+  if (strlen(substr)==0)                          " nothing to match on empty string
+    return "\<tab>"
+  endif
+  let has_period = match(substr, '\.') != -1      " position of period, if any
+  let has_slash = match(substr, '\/') != -1       " position of slash, if any
+  if (!has_period && !has_slash)
+    return "\<C-X>\<C-P>"                         " existing text matching
+  elseif ( has_slash )
+    return "\<C-X>\<C-F>"                         " file matching
+  else
+    return "\<C-X>\<C-O>"                         " plugin matching
+  endif
+endfunction
+
+
+
+"inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+
+"let g:SuperTabContextDefaultCompletionType = "<c-n>"
+"let g:SuperTabDefaultCompletionType = "<c-n>"
+inoremap <Tab> <C-n>
+
+
+
+
+
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+set completeopt=longest,menuone
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
