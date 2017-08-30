@@ -238,11 +238,8 @@ let g:vim_markdown_folding_disabled = 1
 
 let g:airline#extensions#tabline#enabled = 1
 
-:set laststatus=2				" always show the Airline
-let g:airline_theme='wombat' 	" try simple powerlineish ,solarized & more. [Help] :AirlineTheme <keyword>
 
 " --- VIM
-:color solarized				" vim theme [Tip] :color <keyword>
 
 "------  Text File Settings  ------
 :autocmd! BufNewFile,BufRead *.txt,*.md,*.tex set wrap
@@ -476,11 +473,16 @@ augroup END
 nmap <silent> ` :QFix<CR>
 
 
+
+set laststatus=2				" always show the Airline
+
+"Theme
+let g:airline_theme='wombat' 	" try simple powerlineish ,solarized & more. [Help] :AirlineTheme <keyword>
+
+color adam 					"	solarized	vim theme [Tip] :color <keyword>
 autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-
-
-let enduser_utf8_support = 1 
 source ~/.vim/vimrc.extra
+autocmd VimEnter * TagbarOpen
 
 if enduser_utf8_support
     let g:airline_right_sep = '◀'
@@ -500,5 +502,7 @@ elseif !enduser_utf8_support
     " http://vimhelp.appspot.com/digraph.txt.html " Ctrl-K Dt for ▼   (also use :digraph )
     let g:NERDTreeDirArrowExpandable = '»'
     let g:NERDTreeDirArrowCollapsible = '▼'   "let g:NERDTreeDirArrowCollapsible = '-'
+	" Tagbar symbols
+	let g:tagbar_iconchars = ['+', '-']
 endif
 
