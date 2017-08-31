@@ -438,16 +438,17 @@ set rtp+=~/.fzf
 
 call plug#begin('~/.vim/plugged')
   " Make sure you use single quotes
-Plug 'junegunn/vim-easy-align'									" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'		" Any valid git URL is allowed
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'				" Multiple Plug commands can be written in a single line using | separators
+"Plug 'junegunn/vim-easy-align'									" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+"Plug 'https://github.com/junegunn/vim-github-dashboard.git'		" Any valid git URL is allowed
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'				" Multiple Plug commands can be written in a single line using | separators
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }			" On-demand loading
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }			" Using a non-master branch
-Plug 'fatih/vim-go', { 'tag': '*' }								" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }		" Plugin options
+"Plug 'fatih/vim-go', { 'tag': '*' }								" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }		" Plugin options
 Plug 'junegunn/fzf',{ 'dir': '~/.fzf', 'do': './install --all'} " Plugin outside ~/.vim/plugged with post-update hook
-Plug '~/my-prototype-plugin'									" Unmanaged plugin (manually installed and updated)
+"Plug '~/my-prototype-plugin'									" Unmanaged plugin (manually installed and updated)
+Plug 'ervandew/supertab'
 " Initialize plugin system
 call plug#end()
 
@@ -480,9 +481,20 @@ set laststatus=2				" always show the Airline
 let g:airline_theme='wombat' 	" try simple powerlineish ,solarized & more. [Help] :AirlineTheme <keyword>
 
 color adam 					"	solarized	vim theme [Tip] :color <keyword>
+
+
+
+set completeopt=longest,menuone
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+
 source ~/.vim/vimrc.extra
 autocmd VimEnter * TagbarOpen
+autocmd VimEnter * NERDTree
 
 if enduser_utf8_support
     let g:airline_right_sep = '◀'
@@ -504,5 +516,22 @@ elseif !enduser_utf8_support
     let g:NERDTreeDirArrowCollapsible = '▼'   "let g:NERDTreeDirArrowCollapsible = '-'
 	" Tagbar symbols
 	let g:tagbar_iconchars = ['+', '-']
-endif
+ endif
 
+
+
+" :Shell <command>
+function! s:ExecuteInShell(command)
+  let command = join(map(split(a:command), 'expand(v:val)'))
+  let winnr = bufwinnr('^' . command . '$')
+  silent! execute  winnr < 0 ? 'botright new ' . fnameescape(command) : winnr . 'wincmd w'
+  setlocal buftype=nowrite bufhidden=wipe nobuflisted noswapfile nowrap number
+  echo 'Execute ' . command . '...'
+  silent! execute 'silent %!'. command
+  silent! execute 'resize ' . line('$')
+  silent! redraw
+  silent! execute 'au BufUnload <buffer> execute bufwinnr(' . bufnr('#') . ') . ''wincmd w'''
+  silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInShell(''' . command . ''')<CR>'
+  echo 'Shell command ' . command . ' executed.'
+endfunction
+command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
