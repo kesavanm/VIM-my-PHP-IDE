@@ -443,12 +443,12 @@ call plug#begin('~/.vim/plugged')
 "Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'				" Multiple Plug commands can be written in a single line using | separators
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }			" On-demand loading
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }			" Using a non-master branch
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }			" Using a non-master branch
 "Plug 'fatih/vim-go', { 'tag': '*' }								" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 "Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }		" Plugin options
 Plug 'junegunn/fzf',{ 'dir': '~/.fzf', 'do': './install --all'} " Plugin outside ~/.vim/plugged with post-update hook
 "Plug '~/my-prototype-plugin'									" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'									" Unmanaged plugin (manually installed and updated)
+"Plug '~/my-prototype-plugin'									" Unmanaged plugin (manually installed and updated)
 Plug 'ervandew/supertab'
 " Initialize plugin system
 call plug#end()
