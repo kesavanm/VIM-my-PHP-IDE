@@ -303,6 +303,12 @@ Other than the myriad of built-in methods for navigating text...
 ||`<space>+r`|Restore search results|Search| Restore the original search results
 |`CTRL+x` `CTRL+o`|| Init OMNI Search| Search | VIM Native auto-complete feature. Check for other opts on `CTRL+x`
 
+### Shell 
+
+`:tabe|read !git blame #`
+`:tabe|read !ps -ef #`
+`:Shell ls -a`
+
 
 ### Notes
 - Buffer is the real representation of File in memory.
@@ -325,3 +331,7 @@ Other than the myriad of built-in methods for navigating text...
 ### TODO
 
 * Open (previous) session even when starting `vi` with argument
+
+
+
+
