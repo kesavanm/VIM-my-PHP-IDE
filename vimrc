@@ -575,3 +575,6 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+
+set wildmenu
+
