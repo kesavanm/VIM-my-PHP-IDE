@@ -578,3 +578,9 @@ set omnifunc=syntaxcomplete#Complete
 
 set wildmenu
 
+"Numbers in the title bar 
+let g:airline#extensions#tabline#buffer_nr_show =1
+let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+let g:airline#extensions#tabline#fnamecollapse = 1
+"let g:airline#extensions#tabline#fnamemod = ':p:.'
+
