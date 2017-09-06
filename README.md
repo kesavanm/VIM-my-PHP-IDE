@@ -141,7 +141,8 @@ $ make && make install
 
 * Generate the tags file to hold all your project info
 ```bash
-ctags -R --languages=php .	# you can ignore languages option as well```
+ctags -R --languages=php .	# you can ignore languages option as well
+```
 
 * `g Ctrl-]`aka `:tag` - is very useful. It opens a quick dialog to select one between multiple definitions.
 * `ctrl-t`   - goes to previous spot where you called :tag
@@ -228,9 +229,9 @@ Other than the myriad of built-in methods for navigating text...
 ### Key Shortcuts - Quick Referenece
 
 |Key|Action|Notes|
-|---|------|-----|    
+|---|------|-----|
 |F1 | VIM - Help       | VIM Online Help for your installed version
-|F2 |PASTE setting     | Toggle PASTE setting in NORMAL Mode (`set :paste`)  
+|F2 |PASTE setting     | Toggle PASTE setting in NORMAL Mode (`set :paste`)
 |F3	|Find pattern      | Search for a pattern string inside your project files
 |F4	|Mouse mode toggle | Toggle between Mouse mode On and Off (`:set mouse=a`)
 |F5	|Run command       | Execute an external command and populate the outcome in QuickFix window (`:Run`)
