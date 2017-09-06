@@ -140,11 +140,12 @@ $ make && make install
 ```
 
 * Generate the tags file to hold all your project info
-```bash $ctags -R --languages=php .	(you can ignore languages option as well ) ```
+```bash
+ctags -R --languages=php .	# you can ignore languages option as well```
 
-* `g Ctrl-]` - is very useful. It opens a quick dialog to select one between multiple definitions.
-* ctrl-t   - goes to previous spot where you called :tag
-* ctrl-]   - calls :tag on the word under the cursor
+* `g Ctrl-]`aka `:tag` - is very useful. It opens a quick dialog to select one between multiple definitions.
+* `ctrl-t`   - goes to previous spot where you called :tag
+* `ctrl-]`   - calls `:tag` on the word under the cursor
 
 * `:tag / <pattern>`
 * `:stag / <pattern>`
@@ -173,7 +174,7 @@ The following help you to filter over search results.
 * `<Leader>r` - restore the Quickfix/location-list with original entries
 
 
-### Quick Fix
+### Quick Fix window
 * Use backtick  (\`) -   Toggle between Quicklist window
 * `:copen`  - Opens quick fix window
 * `:cclose`	- Closes the quick fix window
@@ -193,9 +194,9 @@ Other than the myriad of built-in methods for navigating text...
 
 ### General
 
-* :se  - shortcut for :set
-* :set mouse=a  - set vim in mouse mode ; No right click , quick paste
-* :set mouse=	- set vim in quick edit mode
+* `:se`  - shortcut for `:set`
+* `:set mouse=a`  - set vim in mouse mode ; No right click , quick paste
+* `:set mouse=`	- set vim in quick edit mode
 `F4` - Alias for the mouse mode - toggle
 
 `F5` - Alias for the `:Run` `:R` - Execute a system command and send the outcome to QuickFix window
@@ -242,7 +243,7 @@ Other than the myriad of built-in methods for navigating text...
 ### Commands for Quick Referenece
 |Command | Shortcut | Action| Category|  Notes|
 |--------|----------|-------|---------|-------|
-|`:open ~/foo.txt` or `:edit ~/foo.txt` | `:o ~/foo.txt`or `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
+|`:open ~/foo.txt`or<br> `:edit ~/foo.txt` | `:o ~/foo.txt`or<br> `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
 |`:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
 |`:<command>!` |  |Force it | File Operation|  Do it by force. Ex. `:w!` Write into file by force
 |`:vsplit ~/bar.sh`|`:vsp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Vertical)
@@ -256,12 +257,12 @@ Other than the myriad of built-in methods for navigating text...
 |`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
 ||`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
 ||`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
-|`CTRL+x` `CTRL+o`|| Init OMNI Search| Search | VIM Native auto-complete feature 
+|`CTRL+x` `CTRL+o`|| Init OMNI Search| Search | VIM Native auto-complete feature
 
 ### Commands for Full Referenece
-|Command | Shortcut | Action| Category|  Notes|
+|Command(Original)&nbsp; | Shortcut(Alternative) | Action| Category/Operation |  Notes|
 |--------|----------|-------|---------|-------|
-|~:open ~/foo.txt` or `:edit ~/foo.txt` | `:o ~/foo.txt`or `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
+|`~:open ~/foo.txt`or<br> `:edit ~/foo.txt` | `:o ~/foo.txt`or<br> `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
 |`:view foo.bar` | | File view |File Operation | View file (read-only) in a new buffer
 |`:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
 |`:write ~/bar.sh` | `:w ~/bar.sh`| File write |File Operation | Writes buffer/tab content into new file
@@ -291,19 +292,19 @@ Other than the myriad of built-in methods for navigating text...
 |`:Sexplore ~` | `:Sex ~`| VIM Explorer|File Explorer	|Opens (split) explorer (Home dir ~ , in this case)
 |`:Vexplore ` | `:Vex `| VIM Explorer|File Explorer	|Opens (vertical) explorer (Current dir , in this case)
 |`:Texplore [arg]` | `:Tex [arg]`| VIM Explorer|File Explorer	| Opens  explorer in TAB
-|`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
-|`:stag` ||Goto definition|CTAG|Takes to exact definition in Horizontal split window. Quick ref on Method/Function/Class origin
-|`:tselect` or `:ptselect`||List definitions|CTAG|List other definition(s). Useful to find similar Method/Function/Class definitions
+|`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition.<br>Useful to find the Method/Function/Class origin
+|`:stag` ||Goto definition|CTAG|Takes to exact definition in Horizontal split window.<br>Quick ref on Method/Function/Class origin
+|`:tselect` or `:ptselect`||List definitions|CTAG|List other definition(s).<br>Useful to find similar Method/Function/Class definitions
 ||`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
 ||`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
-|`:vimgrep`|`:vim`|VIM Native search| Search| **Syntax:**`:vimgrep <pattern> **/*php ~/path/to/project`. Searching `php` files under `~/path/to/project`. `**` stands for *recursively*
+|`:vimgrep`|`:vim`|VIM Native search| Search| **Syntax:**`:vimgrep <pattern> **/*php ~/path/to/project`.<br> Searching `php` files under `~/path/to/project`. `**` stands for *recursively*
 |`:grep` ||GNU search| Search|Search using GNU regex pattern style
 ||`<space>+g`|Filtering within search |Search| Filter the search results with pattern
 ||`<space>+v`|Inverse filtering on search |Search|Inverse filter the search results with pattern
 ||`<space>+r`|Restore search results|Search| Restore the original search results
 |`CTRL+x` `CTRL+o`|| Init OMNI Search| Search | VIM Native auto-complete feature. Check for other opts on `CTRL+x`
 
-### Shell 
+### Shell
 
 `:tabe|read !git blame #`
 `:tabe|read !ps -ef #`
@@ -331,7 +332,3 @@ Other than the myriad of built-in methods for navigating text...
 ### TODO
 
 * Open (previous) session even when starting `vi` with argument
-
-
-
-
