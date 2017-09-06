@@ -203,15 +203,15 @@ Other than the myriad of built-in methods for navigating text...
 `F5` - Alias for the `:Run` `:R` - Execute a system command and send the outcome to QuickFix window
 `F7` - Show current date/time
 
-* gg Goto line #1
-* G  Goto EOF
-* N| Goto column N
-* or # to jump around between files and variables.
+* `gg` Goto line #1
+* `G`  Goto EOF
+* `N|` Goto column N
+* `\*` or `\#` to jump around between files and variables.
 
-* Ctrl f – Jump forward one full screen.
-* Ctrl b – Jump backwards one full screen
-* Ctrl d – Jump forward (down) a half screen
-* Ctrl u – Jump back (up) one half screen
+* `Ctrl f` – Jump forward one full screen.
+* `Ctrl b` – Jump backwards one full screen
+* `Ctrl d` – Jump forward (down) a half screen
+* `Ctrl u` – Jump back (up) one half screen
 
 ### Action over all Buffers
 
@@ -259,6 +259,7 @@ Other than the myriad of built-in methods for navigating text...
 ||`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
 ||`CTRL+t`|Back to usage | CTAG |Back to original file Method/Function/Class
 |`CTRL+x` `CTRL+o`|| Init OMNI Search| Search | VIM Native auto-complete feature
+|`:GrepBuffer <pattern>`|| Search pattern from buffers| Search | Populate in QuickFix
 
 ### Commands for Full Referenece
 |Command(Original)&nbsp; | Shortcut(Alternative) | Action| Category/Operation |  Notes|
@@ -304,12 +305,12 @@ Other than the myriad of built-in methods for navigating text...
 ||`<space>+v`|Inverse filtering on search |Search|Inverse filter the search results with pattern
 ||`<space>+r`|Restore search results|Search| Restore the original search results
 |`CTRL+x` `CTRL+o`|| Init OMNI Search| Search | VIM Native auto-complete feature. Check for other opts on `CTRL+x`
-
+|`:GrepBuffer <pattern>`|| Search pattern from buffers| Search | Populate in QuickFix
 ### Shell
 
-`:tabe|read !git blame #`
-`:tabe|read !ps -ef #`
-`:Shell ls -a`
+* `:tabe|read !git blame #`
+* `:tabe|read !ps -ef #`
+* `:Shell ls -a`
 
 
 ### Notes
