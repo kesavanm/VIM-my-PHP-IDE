@@ -44,24 +44,20 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 
 ### Switching between files (Buffers)
 
-* Use `<Leader>q` to close the current file (a different file will appear in its place)
-* Use `Ctrl h` `Ctrl l` to move between open files
-* `Ctrl Left` `Ctrl Right` also works for switching between files
-* While in MacVIM, you can swipe left and right to switch between open files
-* Use `Cmd Shift N` (or `Alt n` in Linux GVim) to open a new empty buffer
+* `Ctrl h` `Ctrl l` to move between open files
+* `<Leader>q` to close the current file (a different file will appear in its pane/window)
+
+* `:buffers` or `:ls` -  lists open buffers
+* `:b<number>`  -  open the specified buffer in the current pane.
 
 * `:e ~/path/to/file` - Opens the file as a buffer.
 * `:sp ~/path/to/file` - Opens the file in a new (Window) view port.
 * `:Bclose` - Close the particular buffer. `:q` should be avoided unless need.
 * `:tabe ~/path/to/file` - Opens for edit in a tab. Use `:tabclose` once done.
 * `:Sex ~` or `:Sexplore` -	Opens a quick (split) explorer of the argument (Home dir ~ , in this case)
-* `:Tex & :Vex`		- Native vim options beside `:Sex`
+* `:Tex & :Vex`		- Native vim options beside `:Sex` (`V`ertical & `T`abbed mode)
 
 ### Tabs
-
-* Use `Cmd t` (or `Alt t` in Linux GVim) to open a new tab
-* Use `Cmd w` (or `Alt w` in Linux GVim) to close the current tab
-* Use `Cmd 1` to `Cmd 9` (or `Alt 1` to `Alt 9` in Linux GVim) to navigate to the specified tab
 
 * `:tabnew` - New tab to start with
 * `:tab sp` - Convert the current buffer into Tab
@@ -69,20 +65,19 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * `:tab sball` - If you accidently made the above command & locked in splitted mode :)
 * `:tab ball` -  All buffers into Tabs
 * `:tabo`	- All tabs into buffers
-* `F6`	- Toggle command to convert all opend files between buffers & tabs
+* `gt` & `gT` - Switch tabs back and forth
+* `F6`	- Toggle command to convert all opened files between buffers & tabs
 
 ### Viewports (Windows/Splits)
 
-* Use `<Leader>h` `<Leader>j` `<Leader>k` `<Leader>l` to navigate between viewports
-* Use `<Leader>Q` to close the current window (you probably won't ever need to do this)
-* Use `<Leader>n` to toggle the file browser
-* Use `Ctrl P` to perform a recursive fuzzy filename search
-* Use `<Leader>a` and type a phrase to search to search based on content within your files (quote and escape if needed)
-* Use `<Leader>A` to close the open ack search results at the bottom of the screen
-
-* Use `Ctrl ww` to switch between windows
-
-* `Ctrl-W c` - Close the buffer/window/tab  - Native command
+* `<Leader>h` `<Leader>j` `<Leader>k` `<Leader>l` to navigate between viewports(panes)
+* `Ctrl-W` `h/j/k/l` - Port direction will allow you to move among the panes.
+* `Ctrl-w w` to switch between windows
+* `Ctrl-w s` - Horizontal split for current buffer(s).
+* `Ctrl-w v` - Vertical split.
+* `Ctrl-w c` - Close the buffer/window/tab  - Native command
+* `<Leader>q` to close the current file (you probably won't ever need to do this)
+* `<Leader>n` to toggle the file browser
 
 ### File Browser (NERDTree)
 
@@ -101,7 +96,6 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * Use `o` to open the selected file in a new buffer
 * Use `t` to open the selected file in a new tab
 
-
 * Use `I (shift + i)`   to list hidden files.
 * Use `s` to vsplit the current window and open the selected file.
 * Use `i` to split the current window and open the selected file.
@@ -117,16 +111,14 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 
 There is a very large collection of colorschemes in this repository.
 Many of them can be seen [here](http://vimcolors.com/).
-Set the scheme using `:colorscheme NAME`.
-
-* Use `<Leader>x` to switch to a random theme.
-* F8 - Theme
+* `:colorscheme` or `:color <theme-name>`  - Theme at buffer
+* `<Leader>x` or `F8` - Random buffer theme
+* `:AirlineTheme <theme-name>` Theme at VI level
 
 ### Ctrl-P FizzyFinder
-
-* Ctrl-D		to switch modes [To Dir search]
-* Ctrl-F/B/M	to switch between files/buffers/MUF (Most Used Files)
-
+* `Ctrl-p` to perform a recursive fuzzy filename search
+* `Ctrl-d`		to switch modes [To Dir search]
+* `Ctrl-f/b/m`	to switch between files/buffers/MUF (Most Used Files)
 
 ### C-Tags
 
@@ -224,7 +216,7 @@ Other than the myriad of built-in methods for navigating text...
 * `:tabclose`	- Tab close
 * `:wa` - Write all
 * `:qa` `:qall` - Quit all
-
+* `<Leader>q` to close the current file (a different file will appear in its pane/window) (you probably won't ever need to do this)
 
 ### Key Shortcuts - Quick Referenece
 
