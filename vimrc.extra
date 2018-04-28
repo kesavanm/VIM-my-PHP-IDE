@@ -1,3 +1,8 @@
 "TODO - End user customization 
-set tags=/data/kmuthuvel/code/tags		" c-tags path
+set tags=~/webapps/kesavan_info/tags	" c-tags path
 let enduser_utf8_support=1				" 1/0 ;  if you see arrows & diamond ▶◀ ◆ , set 1 else 0
+
+let g:airline#extensions#tabline#buffer_nr_show =1
+let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+let g:airline#extensions#tabline#fnamecollapse = 1
+"let g:airline#extensions#tabline#fnamemod = ':p:.'
