@@ -492,8 +492,8 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 autocmd  FileType  php setlocal omnifunc=phpcomplete#CompletePHP
 source ~/.vim/vimrc.extra
-autocmd VimEnter * TagbarOpen
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * TagbarOpen
+"autocmd VimEnter * NERDTree
 
 if enduser_utf8_support
     let g:airline_right_sep = '◀'
