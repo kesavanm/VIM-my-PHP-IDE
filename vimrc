@@ -427,8 +427,9 @@ command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=h
 
 
 cabbrev tabv tab sview +setlocal\ nomodifiable
-map <F3> :Rgrep <CR> 
-map <S-C-F> :tag /xyz
+map <F3>   :Rgrep <CR>
+map <S-F3> :tag  <CR>
+map <S-C-F>:tag /xyz
 map <F4> <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
 nnoremap <F5> :R
 let notabs = 0
