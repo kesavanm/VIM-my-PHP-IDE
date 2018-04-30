@@ -167,7 +167,7 @@ autocmd FileType nerdtree noremap <buffer> <c-right> <nop>
 autocmd FileType nerdtree noremap <buffer> <c-l> <nop>
 
 " Open NERDTree if we're executing vim without specifying a file to open
-autocmd vimenter * if !argc() | NERDTree | endif
+"autocmd vimenter * if !argc() | NERDTree | endif
 
 " Hides "Press ? for help"
 let NERDTreeMinimalUI=1
@@ -558,27 +558,21 @@ function! Smart_TabComplete()
   endif
 endfunction
 
-
-
 "inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 "let g:SuperTabContextDefaultCompletionType = "<c-n>"
 "let g:SuperTabDefaultCompletionType = "<c-n>"
 inoremap <Tab> <C-n>
 
-
-
-
-
 autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 set completeopt=longest,menuone
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 set wildmenu
+set paste
 
 "Numbers in the title bar 
 let g:airline#extensions#tabline#buffer_nr_show =1
@@ -586,3 +580,9 @@ let g:airline#extensions#tabline#buffer_nr_format = '%s:'
 let g:airline#extensions#tabline#fnamecollapse = 1
 "let g:airline#extensions#tabline#fnamemod = ':p:.'
 
+" `GNU/screen` options
+if &term =~ '256color'
+" disable Background Color Erase (BCE) so that color schemes
+" render properly when inside 256-color GNU screen.
+	set t_ut=
+endif
