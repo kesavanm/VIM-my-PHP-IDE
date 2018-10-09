@@ -47,6 +47,7 @@ As of `v0.2.0`, the Leader key is now bound to `Space` (used to be `Comma`)
 * `Ctrl h` `Ctrl l` to move between open files
 * `<Leader>q` to close the current file (a different file will appear in its pane/window)
 
+* `:Bufferlist` -  summary of open buffers.Easy way to manage buffers
 * `:buffers` or `:ls` -  lists open buffers
 * `:b<number>`  -  open the specified buffer in the current pane.
 
@@ -247,6 +248,7 @@ Other than the myriad of built-in methods for navigating text...
 |`:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
 |`:Bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | (Recommended)Deletes current buffer;Keeps the layout.
 |`:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | (Messy/Avoid)Deletes current buffer; Closes window if need.
+|`:Bufferlist` |   |Buffer List | Window Mgmt* | Easy way to manage your open buffers/tabs
 |`:quitall`  |`:qa`|Quit All | Window Mgmt* | Quit (Exits) all window. Bye-Bye !!!
 |`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
 ||`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
