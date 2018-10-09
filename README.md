@@ -245,7 +245,8 @@ Other than the myriad of built-in methods for navigating text...
 ||`u`| NERDTree | File Explorer | Move one level up
 |`<space>+h/j/k/l`| `CTRL+w w`| Switch Window | Window Mgmt* | Switch to window (Left/Down/Up/Right).
 |`:copen` & `:cclose` | `` ` |Open/Close QuickFix | Window Mgmt |Opens/Closes QuickFix window
-|`:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | Deletes current buffer ; Closes window if need.
+|`:Bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | (Recommended)Deletes current buffer;Keeps the layout.
+|`:bdelete` |`:bd`   |Buffer Delete | Window Mgmt* | (Messy/Avoid)Deletes current buffer; Closes window if need.
 |`:quitall`  |`:qa`|Quit All | Window Mgmt* | Quit (Exits) all window. Bye-Bye !!!
 |`:tag` or `:ptag`|`CTRL+]`|Goto definition|CTAG|Takes to exact definition. Useful to find the Method/Function/Class origin
 ||`g+CTRL+]`|Search definitions|CTAG | Where are this Method/Function/Class used in project files?
