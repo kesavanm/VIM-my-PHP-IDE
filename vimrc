@@ -586,3 +586,7 @@ if &term =~ '256color'
 " render properly when inside 256-color GNU screen.
 	set t_ut=
 endif
+
+
+
+set runtimepath^=~/.vim/bundle/bbye		" use Bdelete/Bwipeout instead of bdelete/bwipeout
