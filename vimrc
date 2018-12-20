@@ -376,6 +376,11 @@ if filereadable($HOME.'/.vimrc_local')
 endif
 
 " --- kmuthuvel's own tweaks -- 
+"------  Local Overrides  ------
+if filereadable($HOME.'/.vim/vimrc.extra')
+	source $HOME/.vim/vimrc.extra
+endif
+
 set ignorecase
 set directory=~/.vim/tmp
 set modifiable
@@ -453,6 +458,10 @@ Plug 'junegunn/fzf',{ 'dir': '~/.fzf', 'do': './install --all'} " Plugin outside
 "Plug '~/my-prototype-plugin'									" Unmanaged plugin (manually installed and updated)
 Plug 'ervandew/supertab'
 " Initialize plugin system
+
+
+Plug 'johngrib/vim-game-snake'
+
 call plug#end()
 
 
@@ -491,7 +500,6 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 autocmd  FileType  php setlocal omnifunc=phpcomplete#CompletePHP
-source ~/.vim/vimrc.extra
 "autocmd VimEnter * TagbarOpen
 "autocmd VimEnter * NERDTree
 
@@ -587,6 +595,27 @@ if &term =~ '256color'
 	set t_ut=
 endif
 
-
-
 set runtimepath^=~/.vim/bundle/bbye		" use Bdelete/Bwipeout instead of bdelete/bwipeout
+
+let g:airline#extensions#tabline#buffer_nr_show =1
+let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+let g:airline#extensions#tabline#fnamecollapse = 1
+"let g:airline#extensions#tabline#fnamemod = ':p:.'
+
+if using_putty
+	" https://unix.stackexchange.com/a/1764/152264
+	" https://unix.stackexchange.com/questions/1709/how-to-fix-ctrl-arrows-in-vim
+	" resize horzontal/vertical split window - from PuTTY - WARNING - HARDCODED
+	map [A <C-W>-<C-W>-
+	map [B <C-W>+<C-W>+
+	map [C <C-W>><C-W>>
+	map [D <C-W><<C-W><
+elseif !using_putty
+	" resize horzontal split window
+	nmap <C-Up> <C-W>-<C-W>-
+	nmap <C-Down> <C-W>+<C-W>+
+	" resize vertical split window
+	nmap <C-Left> <C-W>><C-W>>
+	nmap <C-Right> <C-W><<C-W><
+
+endif
