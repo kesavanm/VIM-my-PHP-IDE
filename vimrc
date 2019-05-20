@@ -252,133 +252,133 @@ au BufReadPost Jenkinsfile set filetype=groovy
 
 "------  GUI Options  ------
 if has("gui_running")
-	" Hides toolbar and scrollbars and File menu
-	set guioptions=egt
+    " Hides toolbar and scrollbars and File menu
+    set guioptions=egt
 
-	" Highlights the current line background
-	set cursorline
-	colorscheme hybrid
+    " Highlights the current line background
+    set cursorline
+    colorscheme hybrid
 
-	"autocmd VimEnter * TagbarOpen
+    "autocmd VimEnter * TagbarOpen
 
-	" Open VIM in fullscreen window
-	set lines=200 columns=500
+    " Open VIM in fullscreen window
+    set lines=200 columns=500
 
-	" Toggle fullscreen
-	map <silent> <leader>w :set lines=200 columns=500<CR>
+    " Toggle fullscreen
+    map <silent> <leader>w :set lines=200 columns=500<CR>
 
-	" Build all help tags (slower launch, but I run GUI vim like once per day)
-	call pathogen#helptags()
+    " Build all help tags (slower launch, but I run GUI vim like once per day)
+    call pathogen#helptags()
 
-	silent! cd $HOME/Projects
+    silent! cd $HOME/Projects
 
-	if has("gui_macvim") " OS X
-		"set guifont=Monaco:h14
-		set guifont=Monaco:h10
-		set noantialias
-		"set transparency=15
+    if has("gui_macvim") " OS X
+        "set guifont=Monaco:h14
+        set guifont=Monaco:h10
+        set noantialias
+        "set transparency=15
 
-		" Swipe to move between bufers :D
-		map <silent> <SwipeLeft> :bprev<CR>
-		map <silent> <SwipeRight> :bnext<CR>
+        " Swipe to move between bufers :D
+        map <silent> <SwipeLeft> :bprev<CR>
+        map <silent> <SwipeRight> :bnext<CR>
 
-		" Cmd+Shift+N = new buffer
-		map <silent> <D-N> :enew<CR>
+        " Cmd+Shift+N = new buffer
+        map <silent> <D-N> :enew<CR>
 
-		" Cmd+P = CtrlP
-		" TODO: This doesn't actually work, still opens Print dialog
-		macmenu File.Print key=<nop>
-		nnoremap <silent> <D-p> :CtrlP<CR>
+        " Cmd+P = CtrlP
+        " TODO: This doesn't actually work, still opens Print dialog
+        macmenu File.Print key=<nop>
+        nnoremap <silent> <D-p> :CtrlP<CR>
 
-		" Cmd+t = new tab
-		nnoremap <silent> <D-t> :tabnew<CR>
+        " Cmd+t = new tab
+        nnoremap <silent> <D-t> :tabnew<CR>
 
-		" Cmd+w = close tab (this should happen by default)
-		nnoremap <silent> <D-w> :tabclose<CR>
+        " Cmd+w = close tab (this should happen by default)
+        nnoremap <silent> <D-w> :tabclose<CR>
 
-		" Cmd+1...9 = go to that tab
-		map <silent> <D-1> 1gt
-		map <silent> <D-2> 2gt
-		map <silent> <D-3> 3gt
-		map <silent> <D-4> 4gt
-		map <silent> <D-5> 5gt
-		map <silent> <D-6> 6gt
-		map <silent> <D-7> 7gt
-		map <silent> <D-8> 8gt
-		map <silent> <D-9> 9gt
+        " Cmd+1...9 = go to that tab
+        map <silent> <D-1> 1gt
+        map <silent> <D-2> 2gt
+        map <silent> <D-3> 3gt
+        map <silent> <D-4> 4gt
+        map <silent> <D-5> 5gt
+        map <silent> <D-6> 6gt
+        map <silent> <D-7> 7gt
+        map <silent> <D-8> 8gt
+        map <silent> <D-9> 9gt
 
-		" OS X probably has ctags in a weird place
-		let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+        " OS X probably has ctags in a weird place
+        let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 
-		" Damn you scrollwheel paste
-		nnoremap <MiddleMouse> <Nop>
-		nnoremap <2-MiddleMouse> <Nop>
-		nnoremap <3-MiddleMouse> <Nop>
-		nnoremap <4-MiddleMouse> <Nop>
+        " Damn you scrollwheel paste
+        nnoremap <MiddleMouse> <Nop>
+        nnoremap <2-MiddleMouse> <Nop>
+        nnoremap <3-MiddleMouse> <Nop>
+        nnoremap <4-MiddleMouse> <Nop>
 
-		inoremap <MiddleMouse> <Nop>
-		inoremap <2-MiddleMouse> <Nop>
-		inoremap <3-MiddleMouse> <Nop>
-		inoremap <4-MiddleMouse> <Nop>
+        inoremap <MiddleMouse> <Nop>
+        inoremap <2-MiddleMouse> <Nop>
+        inoremap <3-MiddleMouse> <Nop>
+        inoremap <4-MiddleMouse> <Nop>
 
-		" Pair Program mode, so that my coworkers can read my screen ;)
-		nnoremap <leader>p :call PairProgramMode()<cr>
-		function! PairProgramMode()
-			if g:pair_program_mode
-				let g:pair_program_mode = 0
-				set guifont=Monaco:h10
-				set noantialias
-				set lines=200 columns=500
-			else
-				set guifont=Monaco:h15
-				set antialias
-				set lines=200 columns=500
-				let g:pair_program_mode = 1
-			endif
-		endfunction
+        " Pair Program mode, so that my coworkers can read my screen ;)
+        nnoremap <leader>p :call PairProgramMode()<cr>
+        function! PairProgramMode()
+            if g:pair_program_mode
+                let g:pair_program_mode = 0
+                set guifont=Monaco:h10
+                set noantialias
+                set lines=200 columns=500
+            else
+                set guifont=Monaco:h15
+                set antialias
+                set lines=200 columns=500
+                let g:pair_program_mode = 1
+            endif
+        endfunction
 
-	elseif has("gui_gtk2") " Linux
-		set guifont=monospace\ 10
+    elseif has("gui_gtk2") " Linux
+        set guifont=monospace\ 10
 
-		" Alt+n = new buffer
-		map <silent> <A-n> :enew<CR>
+        " Alt+n = new buffer
+        map <silent> <A-n> :enew<CR>
 
-		" Alt+t = new tab
-		nnoremap <silent> <A-t> :tabnew<CR>
+        " Alt+t = new tab
+        nnoremap <silent> <A-t> :tabnew<CR>
 
-		" Alt+w = close tab
-		nnoremap <silent> <A-w> :tabclose<CR>
+        " Alt+w = close tab
+        nnoremap <silent> <A-w> :tabclose<CR>
 
-		" Alt+1...9 = go to that tab
-		map <silent> <A-1> 1gt
-		map <silent> <A-2> 2gt
-		map <silent> <A-3> 3gt
-		map <silent> <A-4> 4gt
-		map <silent> <A-5> 5gt
-		map <silent> <A-6> 6gt
-		map <silent> <A-7> 7gt
-		map <silent> <A-8> 8gt
-		map <silent> <A-9> 9gt
+        " Alt+1...9 = go to that tab
+        map <silent> <A-1> 1gt
+        map <silent> <A-2> 2gt
+        map <silent> <A-3> 3gt
+        map <silent> <A-4> 4gt
+        map <silent> <A-5> 5gt
+        map <silent> <A-6> 6gt
+        map <silent> <A-7> 7gt
+        map <silent> <A-8> 8gt
+        map <silent> <A-9> 9gt
 
-	elseif has("gui_win32") " Windows
-		" WHAT ARE YOU DOING WITH YOUR LIFE?!
-	endif
+    elseif has("gui_win32") " Windows
+        " WHAT ARE YOU DOING WITH YOUR LIFE?!
+    endif
 else
-	set t_Co=256
-	colorscheme Mustang
-	set mouse=a
+    set t_Co=256
+    colorscheme Mustang
+    set mouse=a
 endif
 
 
 "------  Local Overrides  ------
 if filereadable($HOME.'/.vimrc_local')
-	source $HOME/.vimrc_local
+    source $HOME/.vimrc_local
 endif
 
 " --- kmuthuvel's own tweaks -- 
 "------  Local Overrides  ------
 if filereadable($HOME.'/.vim/vimrc.extra')
-	source $HOME/.vim/vimrc.extra
+    source $HOME/.vim/vimrc.extra
 endif
 
 set ignorecase
@@ -402,7 +402,7 @@ set wildignore+=*/.git/**
 " Set no max file limit
 let g:ctrlp_max_files = 0
 " ctrlp_working_path_mode - searching for file name (project/curr_dir)
-let g:ctrlp_working_path_mode = 'ra'	" 0 to search only on current dir
+let g:ctrlp_working_path_mode = 'ra'    " 0 to search only on current dir
 
 
 " Search in certain directories a large project (hardcoded for now)
@@ -445,17 +445,17 @@ set rtp+=~/.fzf
 
 call plug#begin('~/.vim/plugged')
   " Make sure you use single quotes
-"Plug 'junegunn/vim-easy-align'									" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-"Plug 'https://github.com/junegunn/vim-github-dashboard.git'		" Any valid git URL is allowed
-"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'				" Multiple Plug commands can be written in a single line using | separators
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }			" On-demand loading
+"Plug 'junegunn/vim-easy-align'                                 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+"Plug 'https://github.com/junegunn/vim-github-dashboard.git'        " Any valid git URL is allowed
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'                " Multiple Plug commands can be written in a single line using | separators
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }         " On-demand loading
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }			" Using a non-master branch
-"Plug 'fatih/vim-go', { 'tag': '*' }								" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }		" Plugin options
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }           " Using a non-master branch
+"Plug 'fatih/vim-go', { 'tag': '*' }                                " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }       " Plugin options
 Plug 'junegunn/fzf',{ 'dir': '~/.fzf', 'do': './install --all'} " Plugin outside ~/.vim/plugged with post-update hook
-"Plug '~/my-prototype-plugin'									" Unmanaged plugin (manually installed and updated)
-"Plug '~/my-prototype-plugin'									" Unmanaged plugin (manually installed and updated)
+"Plug '~/my-prototype-plugin'                                   " Unmanaged plugin (manually installed and updated)
+"Plug '~/my-prototype-plugin'                                   " Unmanaged plugin (manually installed and updated)
 Plug 'ervandew/supertab'
 " Initialize plugin system
 
@@ -487,12 +487,12 @@ nmap <silent> ` :QFix<CR>
 
 
 
-set laststatus=2				" always show the Airline
+set laststatus=2                " always show the Airline
 
 "Theme
-let g:airline_theme='wombat' 	" try simple powerlineish ,solarized & more. [Help] :AirlineTheme <keyword>
+let g:airline_theme='wombat'    " try simple powerlineish ,solarized & more. [Help] :AirlineTheme <keyword>
 
-color adam 					"	solarized	vim theme [Tip] :color <keyword>
+color adam                  "   solarized   vim theme [Tip] :color <keyword>
 
 set completeopt=longest,menuone
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
@@ -521,8 +521,8 @@ elseif !enduser_utf8_support
     " http://vimhelp.appspot.com/digraph.txt.html " Ctrl-K Dt for ▼   (also use :digraph )
     let g:NERDTreeDirArrowExpandable = '»'
     let g:NERDTreeDirArrowCollapsible = '▼'   "let g:NERDTreeDirArrowCollapsible = '-'
-	" Tagbar symbols
-	let g:tagbar_iconchars = ['+', '-']
+    " Tagbar symbols
+    let g:tagbar_iconchars = ['+', '-']
 endif
 
 
@@ -583,8 +583,8 @@ set wildmenu
 set paste
 
 "Numbers in the title bar 
-let g:airline#extensions#tabline#buffer_nr_show =1
-let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+let g:airline#extensions#tabline#buffer_nr_show =1          "display number in buffer list
+let g:airline#extensions#tabline#buffer_nr_format = '%s:'   "buffer number display format
 let g:airline#extensions#tabline#fnamecollapse = 1
 "let g:airline#extensions#tabline#fnamemod = ':p:.'
 
@@ -592,30 +592,26 @@ let g:airline#extensions#tabline#fnamecollapse = 1
 if &term =~ '256color'
 " disable Background Color Erase (BCE) so that color schemes
 " render properly when inside 256-color GNU screen.
-	set t_ut=
+    set t_ut=
 endif
 
-set runtimepath^=~/.vim/bundle/bbye		" use Bdelete/Bwipeout instead of bdelete/bwipeout
+set runtimepath^=~/.vim/bundle/bbye     " use Bdelete/Bwipeout instead of bdelete/bwipeout
 
-let g:airline#extensions#tabline#buffer_nr_show =1
-let g:airline#extensions#tabline#buffer_nr_format = '%s:'
-let g:airline#extensions#tabline#fnamecollapse = 1
-"let g:airline#extensions#tabline#fnamemod = ':p:.'
 
 if using_putty
-	" https://unix.stackexchange.com/a/1764/152264
-	" https://unix.stackexchange.com/questions/1709/how-to-fix-ctrl-arrows-in-vim
-	" resize horzontal/vertical split window - from PuTTY - WARNING - HARDCODED
-	map [A <C-W>-<C-W>-
-	map [B <C-W>+<C-W>+
-	map [C <C-W>><C-W>>
-	map [D <C-W><<C-W><
+    " https://unix.stackexchange.com/a/1764/152264
+    " https://unix.stackexchange.com/questions/1709/how-to-fix-ctrl-arrows-in-vim
+    " resize horzontal/vertical split window - from PuTTY - WARNING - HARDCODED
+    map [A <C-W>-<C-W>-
+    map [B <C-W>+<C-W>+
+    map [C <C-W>><C-W>>
+    map [D <C-W><<C-W><
 elseif !using_putty
-	" resize horzontal split window
-	nmap <C-Up> <C-W>-<C-W>-
-	nmap <C-Down> <C-W>+<C-W>+
-	" resize vertical split window
-	nmap <C-Left> <C-W>><C-W>>
-	nmap <C-Right> <C-W><<C-W><
+    " resize horzontal split window
+    nmap <C-Up> <C-W>-<C-W>-
+    nmap <C-Down> <C-W>+<C-W>+
+    " resize vertical split window
+    nmap <C-Left> <C-W>><C-W>>
+    nmap <C-Right> <C-W><<C-W><
 
 endif
