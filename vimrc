@@ -253,12 +253,12 @@ au BufReadPost Jenkinsfile set filetype=groovy
 "------  GUI Options  ------
 if has("gui_running")
     " Hides toolbar and scrollbars and File menu
-    set guioptions=egt
+    "set guioptions=egt
 
     " Highlights the current line background
-    set cursorline
-    colorscheme hybrid
-
+    "set cursorline
+    "colorscheme hybrid
+    set guifont=Ubuntu\ Mono\ 10
     "autocmd VimEnter * TagbarOpen
 
     " Open VIM in fullscreen window
@@ -630,3 +630,17 @@ if has('persistent_undo')
     let &undodir = myUndoDir
     set undofile
 endif
+
+function! ToggleGUICruft()
+  if &guioptions=='i'
+    exec('set guioptions=imTrL')
+  else
+    exec('set guioptions=i')
+  endif
+endfunction
+
+map <C-F11> <Esc>:call ToggleGUICruft()<cr>
+
+" by default, hide gui menus
+set guioptions=i
+set guifont=Ubuntu\ Mono\ 10
