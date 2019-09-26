@@ -1,3 +1,17 @@
+if has('win32') || has('win64')
+	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+	
+	"let g:gitgutter_git_executable = '/bin/true'
+	let g:gitgutter_enabled = 0
+	let g:gitgutter_git_executable="C:/Users/180976/Downloads/GitPortable/App/Git/bin/git"
+	set encoding=utf-8
+	set fileencoding=utf-8
+	set termencoding=utf-8
+	set guifont=DejaVu\ Sans\ Mono
+	colorscheme breeze
+	set go=imTrl
+endif
+	  
 set nocp
 call pathogen#infect()
 let mapleader = "\<Space>"
@@ -18,7 +32,8 @@ set number
 set nowrap
 set vb
 set ruler
-set statusline=%<%f\ %h%m%r%=%{fugitive#statusline()}\ \ %-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%=%{fugitive#statusline()}\ \ %-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%=\ \ %-14.(%l,%c%V%)\ %P
 let g:buftabs_only_basename=1
 let g:buftabs_marker_modified = "+"
 
@@ -191,7 +206,7 @@ nnoremap <Leader>gd :Gdiff<CR>
 
 "------  Git Gutter Options ------
 "Disable <Leader>h* commands as they show down movement
-let g:gitgutter_map_keys = 0
+"let g:gitgutter_map_keys = 0
 
 "------  Text Editing Utilities  ------
 " <Leader>T = Delete all Trailing space in file
@@ -362,6 +377,8 @@ if has("gui_running")
 
     elseif has("gui_win32") " Windows
         " WHAT ARE YOU DOING WITH YOUR LIFE?!
+        set guifont=DejaVu\ Sans\ Mono
+
     endif
 else
     set t_Co=256
@@ -642,5 +659,16 @@ endfunction
 map <C-F11> <Esc>:call ToggleGUICruft()<cr>
 
 " by default, hide gui menus
-set guioptions=i
-set guifont=Ubuntu\ Mono\ 10
+set guioptions=imTrl
+colorscheme breeze
+"let g:gitgutter_git_executable = '/bin/true'
+let g:gitgutter_enabled = 0
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+set guifont=DejaVu\ Sans\ Mono
+
+if has('win32') || has('win64')
+	let &shell = bash_path
+	set shell
+endif
