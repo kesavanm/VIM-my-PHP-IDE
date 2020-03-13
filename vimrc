@@ -672,3 +672,8 @@ if has('win32') || has('win64')
 	let &shell = bash_path
 	set shell
 endif
+
+"https://gist.github.com/danmikita/d855174385b3059cd6bc399ad799555e
+"File preview with FZF, RG, Bat, and Devicons 
+source ~/.vim/plugin/init.vim
+map <C-G> :call Fzf_dev()<cr>
