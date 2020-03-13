@@ -1,7 +1,7 @@
 "TODO - End user customization 
-set tags=/data/kmuthuvel/code/tags  " c-tags path
-let enduser_utf8_support=1          " 1/0 ; if you see arrows & diamond ▶◀ ◆ , set 1 else 0
-let using_putty=1                   " 1/0 ; if you're on *nix/native ,set to 0
+set tags=/path/to/code/tags  " c-tags path
+let enduser_utf8_support=1   " 1/0 ; if you see arrows & diamond ▶◀ ◆ , set 1 else 0
+let using_putty=1            " 1/0 ; if you're on *nix/native ,set to 0
 
 " for windows
 let bash_path="C:/Users/180976/Downloads/GitPortable/App/Git/bin/bash"
