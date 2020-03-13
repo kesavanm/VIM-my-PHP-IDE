@@ -1,6 +1,11 @@
 # /home/kesavan/.vim/vimrc
 
-![Screenshot](./screenshot.png "Screenshot of this .vimrc in action")
+###Screenshot - What this is? 
+##### Making your VIM as your IDE
+![Screenshot](./vim-php-ide.png "Screenshot of this .vimrc in action")
+
+##### Fuzzy search for a file
+![Screenshot](./vim-php-ide2.png "Screenshot of this .vimrc in action")
 
 This Vim configuration is meant to make Vim feel more like an IDE than a simple console-based text editor.
 I love this configuration at my work & home
@@ -17,10 +22,18 @@ git clone git://github.com/kesavanm/VIM-my-PHP-IDE.git ~/.vim                   
 ln -s ~/.vim/vimrc ~/.vimrc                                                                         #3 needed for some VIM version
 ```
 
-### Post Install Recommendations
+### Dependencies
+* Plugins are not loaded by default. 
+  * Run `PlugInstall` in first run. Clean the plugins with `PlugClean` if need.
+  * Check the Plugin health with `PlugSnapshot` or  `PlugStatus` 
+* Install `ag`, `bat` & `rg` for perfect Fuzzy activities over file operations
+* Install `fzf` for Fuzzy operations 
 * Install `dejavu-fonts-ttf` and make it as default font, if you're using SSH clients `PuTTY` or it's forked version
+
+
+### Post Install Recommendations
 * MobaXterm will gives you better rendering
-* Create CTAG file and update in the .vimrc ( `set tags=/home/kmuthuvel/src/tags` ) Refer in the C-TAG section below
+* Create CTAG file and update in the .vimrc ( `set tags=/path/to/src/tags` ) Refer in the C-TAG section below
 
 ### One Time Download
 
@@ -219,7 +232,7 @@ Other than the myriad of built-in methods for navigating text...
 * `:qa` `:qall` - Quit all
 * `<Leader>q` to close the current file (a different file will appear in its pane/window) (you probably won't ever need to do this)
 
-### Key Shortcuts - Quick Referenece
+### Key Shortcuts - Quick Reference
 
 |Key|Action|Notes|
 |---|------|-----|
@@ -234,13 +247,14 @@ Other than the myriad of built-in methods for navigating text...
 |F9  |Function explorer | Open Class/Method/Function/Variable definitions in Right side pane
 |` | QuickFix Toggle  | Toggle on QuickFix window
 
-### Commands for Quick Referenece
+### Commands for Quick Reference
 |Command | Shortcut | Action| Category|  Notes|
 |--------|----------|-------|---------|-------|
 |`:open ~/foo.txt`or<br> `:edit ~/foo.txt` | `:o ~/foo.txt`or<br> `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
 |`:write` | `:w `| File write |File Operation | Writes buffer/tab content into file
 |`:<command>!` |  |Force it | File Operation|  Do it by force. Ex. `:w!` Write into file by force
 |`:vsplit ~/bar.sh`|`:vsp ~/bar.sh` |  File edit |File Operation | Opens file for edit in (new) splited window (Vertical)
+|`CTRL+g` | |  File lookup |File Operation | Populate results from fzf lookup
 |`<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
 ||`I`| NERDTree|File Explorer	|list hidden files
 ||`u`| NERDTree | File Explorer | Move one level up
@@ -256,7 +270,7 @@ Other than the myriad of built-in methods for navigating text...
 |`CTRL+x` `CTRL+o`|| Init OMNI Search| Search | VIM Native auto-complete feature
 |`:GrepBuffer <pattern>`|| Search pattern from buffers| Search | Populate in QuickFix
 
-### Commands for Full Referenece
+### Commands for Full Reference
 |Command(Original)&nbsp; | Shortcut(Alternative) | Action| Category/Operation |  Notes|
 |--------|----------|-------|---------|-------|
 |`~:open ~/foo.txt`or<br> `:edit ~/foo.txt` | `:o ~/foo.txt`or<br> `:e ~/foo.txt`| File open |File Operation | Opens file for edit in a new buffer
