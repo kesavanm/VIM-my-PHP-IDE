@@ -1,11 +1,14 @@
 # /home/kesavan/.vim/vimrc
 
-###Screenshot - What this is? 
+### Screenshot - What this is? 
 ##### Making your VIM as your IDE
 ![Screenshot](./vim-php-ide.png "Screenshot of this .vimrc in action")
 
-##### Fuzzy search for a file
+##### Fuzzy search for a file `CTRL+g`
 ![Screenshot](./vim-php-ide2.png "Screenshot of this .vimrc in action")
+
+##### Git blame for a file `:Gblame`
+![Screenshot](./vim-php-ide-gblame.png "Screenshot of this .vimrc in action")
 
 This Vim configuration is meant to make Vim feel more like an IDE than a simple console-based text editor.
 I love this configuration at my work & home
