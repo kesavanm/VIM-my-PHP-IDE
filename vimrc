@@ -1,9 +1,8 @@
 if has('win32') || has('win64')
 	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-	
 	"let g:gitgutter_git_executable = '/bin/true'
 	let g:gitgutter_enabled = 0
-	let g:gitgutter_git_executable="C:/Users/180976/Downloads/GitPortable/App/Git/bin/git"
+	let g:gitgutter_git_executable="C:/Users/path/to/bin/git"
 	set encoding=utf-8
 	set fileencoding=utf-8
 	set termencoding=utf-8
@@ -11,7 +10,7 @@ if has('win32') || has('win64')
 	colorscheme breeze
 	set go=imTrl
 endif
-	  
+
 set nocp
 call pathogen#infect()
 let mapleader = "\<Space>"
@@ -32,8 +31,8 @@ set number
 set nowrap
 set vb
 set ruler
-"set statusline=%<%f\ %h%m%r%=%{fugitive#statusline()}\ \ %-14.(%l,%c%V%)\ %P
-set statusline=%<%f\ %h%m%r%=\ \ %-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%=%{fugitive#statusline()}\ \ %-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%=\ \ %-14.(%l,%c%V%)\ %P   "FIXME Some thing I've to look
 let g:buftabs_only_basename=1
 let g:buftabs_marker_modified = "+"
 
@@ -271,8 +270,8 @@ if has("gui_running")
     "set guioptions=egt
 
     " Highlights the current line background
-    "set cursorline
-    "colorscheme hybrid
+    set cursorline
+    colorscheme hybrid
     set guifont=Ubuntu\ Mono\ 10
     "autocmd VimEnter * TagbarOpen
 
@@ -662,7 +661,7 @@ map <C-F11> <Esc>:call ToggleGUICruft()<cr>
 set guioptions=imTrl
 colorscheme breeze
 "let g:gitgutter_git_executable = '/bin/true'
-let g:gitgutter_enabled = 0
+let g:gitgutter_enabled = 1
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8

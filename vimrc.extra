@@ -4,4 +4,4 @@ let enduser_utf8_support=1   " 1/0 ; if you see arrows & diamond ▶◀ ◆ , se
 let using_putty=1            " 1/0 ; if you're on *nix/native ,set to 0
 
 " for windows
-let bash_path="C:/Users/180976/Downloads/GitPortable/App/Git/bin/bash"
+let bash_path="C:/Users/foo/bar/bin/bash"
