@@ -8,7 +8,7 @@
 ![Screenshot](./vim-php-ide2.png "Screenshot of this .vimrc in action")
 
 ##### Git blame for a file `:Gblame`
-![Screenshot](./vim-php-ide-gblame.png "Screenshot of this .vimrc in action")
+![Screenshot](./vim-php-ide-Gblame.png "Screenshot of this .vimrc in action")
 
 This Vim configuration is meant to make Vim feel more like an IDE than a simple console-based text editor.
 I love this configuration at my work & home
