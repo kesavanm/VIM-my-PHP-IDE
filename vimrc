@@ -1,5 +1,6 @@
 if has('win32') || has('win64')
 	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+
 	"let g:gitgutter_git_executable = '/bin/true'
 	let g:gitgutter_enabled = 0
 	let g:gitgutter_git_executable="C:/Users/path/to/bin/git"
@@ -267,7 +268,7 @@ au BufReadPost Jenkinsfile set filetype=groovy
 "------  GUI Options  ------
 if has("gui_running")
     " Hides toolbar and scrollbars and File menu
-    "set guioptions=egt
+    set guioptions=egt
 
     " Highlights the current line background
     set cursorline
