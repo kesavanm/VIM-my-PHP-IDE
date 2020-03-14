@@ -3,7 +3,7 @@
 
 " BufRead seems more appropriate here but for some reason the final `wincmd p` doesn't work if we do that.
 autocmd VimEnter COMMIT_EDITMSG call OpenCommitMessageDiff()
-function OpenCommitMessageDiff()
+function! OpenCommitMessageDiff()
   " Save the contents of the z register
   let old_z = getreg("z")
   let old_z_type = getregtype("z")
