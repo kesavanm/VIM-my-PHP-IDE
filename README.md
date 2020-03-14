@@ -27,8 +27,8 @@ ln -s ~/.vim/vimrc ~/.vimrc                                                     
 
 ### Dependencies
 * Plugins are not loaded by default. 
-  * Run `PlugInstall` in first run. Clean the plugins with `PlugClean` if need.
-  * Check the Plugin health with `PlugSnapshot` or  `PlugStatus` 
+  * Run `:PlugInstall` in first run. Clean the plugins with `:PlugClean` if need.
+  * Check the Plugin health with `:PlugSnapshot` or  `:PlugStatus`
 * Install `ag`, `bat` & `rg` for perfect Fuzzy activities over file operations
 * Install `fzf` for Fuzzy operations 
 * Install `dejavu-fonts-ttf` and make it as default font, if you're using SSH clients `PuTTY` or it's forked version

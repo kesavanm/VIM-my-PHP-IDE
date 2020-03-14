@@ -677,3 +677,7 @@ endif
 "File preview with FZF, RG, Bat, and Devicons 
 source ~/.vim/plugin/init.vim
 map <C-G> :call Fzf_dev()<cr>
+
+
+source ~/.vim/plugin/git-commit-editor.vim
+map <C-G> :call Fzf_dev()<cr>
