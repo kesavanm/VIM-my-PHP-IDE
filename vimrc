@@ -648,6 +648,12 @@ if has('persistent_undo')
     set undofile
 endif
 
+"preserve UI
+autocmd! VimLeave * mksession			"Automatically save the session when leaving Vim
+autocmd! VimEnter * source ~/Session.vim	"Automatically load the session when entering vim
+autocmd VimLeavePre * mksession! 
+
+
 function! ToggleGUICruft()
   if &guioptions=='i'
     exec('set guioptions=imTrL')

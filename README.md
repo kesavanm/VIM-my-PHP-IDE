@@ -222,9 +222,10 @@ Other than the myriad of built-in methods for navigating text...
 * `Ctrl d` – Jump forward (down) a half screen
 * `Ctrl u` – Jump back (up) one half screen
 
-### Action over all Buffers
+### Action over all buffers/window
 
-`bufdo! %s/pattern/replace/ge`  - Subsuiting the replace with pattern on all buffers
+`:bufdo! %s/pattern/replacement/ge`  - subsuite the replacement with pattern on all buffers
+`:windo! diffthis`  		- compare the contents of buffers in the given window
 
 ### Closing Windows/Tabs/VIM
 
@@ -241,14 +242,14 @@ Other than the myriad of built-in methods for navigating text...
 |---|------|-----|
 |F1 | VIM - Help       | VIM Online Help for your installed version
 |F2 |PASTE setting     | Toggle PASTE setting in NORMAL Mode (`set :paste`)
-|F3	|Find pattern      | Search for a pattern string inside your project files
-|F4	|Mouse mode toggle | Toggle between Mouse mode On and Off (`:set mouse=a`)
-|F5	|Run command       | Execute an external command and populate the outcome in QuickFix window (`:Run`)
-|F6  |Tab Buffer Switch | Toggle command to convert all opend files between buffers & tabs
-|F7  |Current Date/Time | Show current date/time on Status
-|F8  |Theme changer     | Reload a new Theme
-|F9  |Function explorer | Open Class/Method/Function/Variable definitions in Right side pane
-|` | QuickFix Toggle  | Toggle on QuickFix window
+|F3 |Find pattern      | Search for a pattern string inside your project files
+|F4 |Mouse mode toggle | Toggle between Mouse mode On and Off (`:set mouse=a`)
+|F5 |Run command       | Execute an external command and populate the outcome in QuickFix window (`:Run`)
+|F6 |Tab Buffer Switch | Toggle command to convert all opend files between buffers & tabs
+|F7 |Current Date/Time | Show current date/time on Status
+|F8 |Theme changer     | Reload a new Theme
+|F9 |Function explorer | Open Class/Method/Function/Variable definitions in Right side pane
+|`  | QuickFix Toggle  | Toggle on QuickFix window
 
 ### Commands for Quick Reference
 |Command | Shortcut | Action| Category|  Notes|
@@ -289,6 +290,7 @@ Other than the myriad of built-in methods for navigating text...
 |`:tab ball` |`F6` | File edit |File Operation | All buffers into Tabs
 |`<space>`+n| | NERDTree | File Explorer | Toggles on NERDTree explorer on/off
 |`CTRL+w w`| | Switch Window | Window Mgmt* | Switch to next window.
+|`CTRL+w T`| | Move into Tab| Window Mgmt* | Open current window into tab
 ||`u`| NERDTree | File Explorer | Move one level up
 |`C`| `<CR>`|NERDTree | File Explorer | Just press `ENTER` to Move into the directory
 ||`F`| NERDTree | File Explorer | Show/Hide files
